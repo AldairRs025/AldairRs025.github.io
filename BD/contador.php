@@ -1,14 +1,16 @@
-
 <?php
-// Conexión a la base de datos en Railway
-$servername = "mysql.railway.internal";
+$servername = "localhost";
 $username = "root";
-$password = "DTElHoDhuKKoAPtNkelfZsUAaRIMtbfO";
-$dbname = "railway";
-$port = 3306;
+$password = "";
+// $servername = "mysql://root:DTElHoDhuKKoAPtNkelfZsUAaRIMtbfO@mysql.railway.internal:3306/railway";
+// $username = "root";
+// $password = "DTElHoDhuKKoAPtNkelfZsUAaRIMtbfO";
+
+$dbname = "tutorías"; // Base de datos corregida
+$tabla = "contador";  // Tabla corregida
 
 // Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname, $port);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar conexión
 if ($conn->connect_error) {
@@ -68,7 +70,7 @@ $domicilio_madre = escape($conn, $_POST['domicilio_madre']);
 $telefono_madre = escape($conn, $_POST['telefono_madre']);
 
 // Preparar SQL
-$sql = "INSERT INTO contador (
+$sql = "INSERT INTO $tabla (
     nombre, estatura, carrera, peso, fecha_nacimiento, sexo, edad, estado_civil, trabaja, lugar_nacimiento, domicilio_actual, telefono, cp, email,
     vivienda, tipo, tipo_otro, num_personas, parentesco,
     nombre_padre, edad_padre, trabaja_padre, profesion_padre, tipo_trabajo_padre, domicilio_padre, telefono_padre,
