@@ -6,6 +6,8 @@ $password = "";
 // $username = "root";
 // $password = "DTElHoDhuKKoAPtNkelfZsUAaRIMtbfO";
 
+//mysql://root:GmTvlblXDQgbVCOYcAzzkKfFEboyTfRL@shortline.proxy.rlwy.net:38769/railway
+
 $dbname = "tutorías"; // Base de datos corregida
 $tabla = "contador";  // Tabla corregida
 
