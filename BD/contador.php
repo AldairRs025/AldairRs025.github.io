@@ -3,7 +3,7 @@
 // $username = "root";
 // $password = "";
 $servername = "mysql://root:DTElHoDhuKKoAPtNkelfZsUAaRIMtbfO@mysql.railway.internal:3306/railway";
-$username = "railway";
+$username = "root";
 $password = "DTElHoDhuKKoAPtNkelfZsUAaRIMtbfO";
 $dbname = "tutorías"; // Base de datos corregida
 $tabla = "contador";  // Tabla corregida
