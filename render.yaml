@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: tutorias-tesoem
-    env: php
-    plan: free
-    buildCommand: ""
-    startCommand: ""
-    rootDir: public
