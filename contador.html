@@ -225,6 +225,73 @@ form {
     max-width: 1400px !important;
     margin: auto;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.container, form {
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    font-size: 0.9rem;
+    padding: 6px 8px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    font-size: 0.85rem;
+    border-collapse: collapse;
+}
+table input, table select {
+    font-size: 0.85rem;
+    padding: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+th, td {
+    padding: 4px;
+    text-align: left;
+}
+
+.tab-nav, .subtab-nav {
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 10px 0;
+    justify-content: center;
+}
+.tablink, .subtablink {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+}
+@media screen and (max-width: 768px) {
+    h1, h2, h3 {
+        font-size: 1rem;
+    }
+    label {
+        font-size: 0.9rem;
+    }
+    .tablink, .subtablink {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+    table {
+        font-size: 0.8rem;
+    }
+}
 </style>
 </head>
 <body>
@@ -253,12 +320,11 @@ form {
 <button onclick="mostrarFormulario('form2')">Formulario 2</button>
 <button onclick="mostrarFormulario('form3')">Formulario 3</button>
 </div>
-<div class="formulario" id="form1">
+<div class="formulario" id="form1" style="display: block">
 <h3>Formulario 1</h3>
 <form action="BD/contador.php" method="POST">
 <div class="subtab-nav"><button class="subtablink" onclick="mostrarSubtab('datos_personales', this)" type="button">Datos Personales</button><button class="subtablink" onclick="mostrarSubtab('datos_familiares', this)" type="button">Datos
-                            Familiares</button><button class="subtablink" onclick="mostrarSubtab('datos_academicos', this)" type="button">Datos Académicos</button></div><div class="subtab-content" id="datos_personales">
-
+                            Familiares</button><button class="subtablink" onclick="mostrarSubtab('datos_academicos', this)" type="button">Datos Académicos</button></div><div class="subtab-content" id="datos_personales" style="display: block">
 <label>Nombre: <input name="nombre" type="text" value="Aldair"/></label><label>Estatura: <input name="estatura" type="text" value="1.60"/></label><label>Carrera: <input name="carrera" type="text" value="ISC"/></label><label>Peso: <input name="peso" type="text" value="56"/></label><label>Fecha de Nacimiento: <input name="fecha_nacimiento" type="date" value="2002-04-22"/></label><label>Sexo:</label><label><input name="sexo" type="radio" value="Masculino"/>Masculino</label><label><input name="sexo" type="radio" value="Femenino"/>Femenino</label><label>Edad: <input name="edad" type="number" value="23"/></label><label>Estado civil:</label><select id="EstadoCivil" name="estado_civil">
 <!-- <option disabled select>Seleccionar</option> -->
 <option value="">Seleccionar</option>
@@ -270,7 +336,7 @@ form {
                         Rentada</label><label><input name="tipo" type="radio" value="Prestada"/>
                         Prestada</label><label><input name="tipo" type="radio" value="Otros"/> Otros</label>
 </div>
-<div class="subtab-content" id="datos_familiares" style="display:none"><label>Especifique: <input name="tipo_otro" type="text" value="X"/></label><label>Número de personas con las que
+<div class="subtab-content" id="datos_familiares" style="display: none"><label>Especifique: <input name="tipo_otro" type="text" value="X"/></label><label>Número de personas con las que
                         vives:<input name="num_personas" type="number" value="4"/></label><label>Parentesco: <input name="parentesco" type="text" value="X"/></label><label>Nombre del Padre: <input name="nombre_padre" type="text" value="X"/></label><label>Edad del Padre: <input name="edad_padre" type="number" value="52"/></label><label>¿Trabaja el
                         Padre?:</label><label><input name="trabaja_padre" type="radio" value="Si"/>
                         Sí</label><label><input name="trabaja_padre" type="radio" value="No"/>
@@ -453,7 +519,7 @@ form {
                         llevar
                         aparatos o controlar tu actividad física?</p><label><input name="prescripcion" type="radio" value="si"/> Sí</label>
 </div>
-<div class="subtab-content" id="datos_academicos" style="display:none"><label><input name="prescripcion" type="radio" value="no"/> No</label>
+<div class="subtab-content" id="datos_academicos" style="display: none"><label><input name="prescripcion" type="radio" value="no"/> No</label>
 <p><strong>¿Indica cuáles?</strong></p><label><input name="deficiencia" type="checkbox" value="vista"/> Vista</label><label><input name="deficiencia" type="checkbox" value="oido"/> Oído</label><label><input name="deficiencia" type="checkbox" value="lenguaje"/> Lenguaje</label><label><input name="deficiencia" type="checkbox" value="otros"/> Otros</label>
 <h2>ESTADO PSICOFISIOLÓGICOS</h2>
 <div style="overflow-x:auto;">
@@ -756,6 +822,14 @@ form {
             document.getElementById(id).style.display = "block";
             el.classList.add("active");
         }
-    </script>
+    
+window.onload = function() {
+    mostrarFormulario('form1');
+    const firstSubtab = document.querySelector('.subtablink');
+    if (firstSubtab) {
+        mostrarSubtab('datos_personales', firstSubtab);
+    }
+};
+</script>
 </body>
 </html>
