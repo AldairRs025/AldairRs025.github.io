@@ -357,33 +357,6 @@
                 font-size: 0.9rem;
             }
         }
-
-        /* Scroll horizontal para tablas anchas en móvil */
-        @media screen and (max-width: 768px) {
-            .tabla-scroll {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            .tabla-scroll table {
-                width: max-content;
-                min-width: 600px;
-            }
-
-            .tabla-scroll th,
-            .tabla-scroll td {
-                white-space: nowrap;
-            }
-        }
-
-        /* Mejoras visuales */
-        tr {
-            border-bottom: 1px solid #ddd;
-        }
-
-        td input[type="radio"] {
-            transform: scale(1.1);
-        }
     </style>
 </head>
 
@@ -471,172 +444,170 @@
                             value="X" /></label>
                     <h2>Nombre de tus hermanos por edad (del mayor al menor incluyéndote tú)</h2>
                     <div style="overflow-x:auto;">
-                        <div class="tabla-scroll">
-                            <table border="1" style="width:100%; border-collapse: collapse;">
-                                <thead>
-                                    <tr>
-                                        <th>N.º</th>
-                                        <th>Nombre</th>
-                                        <th>Fecha de Nacimiento</th>
-                                        <th>Sexo</th>
-                                        <th>Estudios</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- 10 filas editables -->
-                                    <tr>
-                                        <td data-label="N.º">1</td>
-                                        <td data-label="Nombre"><input name="nombre_1" style="width:100%" type="text" />
-                                        </td>
-                                        <td data-label="Fecha de Nacimiento"><input name="fecha_1" style="width:100%"
-                                                type="date" /></td>
-                                        <td data-label="Sexo">
-                                            <select name="sexo_1" style="width:100%">
-                                                <option value="">Selecciona</option>
-                                                <option value="M">Masculino</option>
-                                                <option value="F">Femenino</option>
-                                            </select>
-                                        </td>
-                                        <td data-label="Estudios"><input name="estudios_1" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="N.º">2</td>
-                                        <td data-label="Nombre"><input name="nombre_2" style="width:100%" type="text" />
-                                        </td>
-                                        <td data-label="Fecha de Nacimiento"><input name="fecha_2" style="width:100%"
-                                                type="date" /></td>
-                                        <td data-label="Sexo">
-                                            <select name="sexo_2" style="width:100%">
-                                                <option value="">Selecciona</option>
-                                                <option value="M">Masculino</option>
-                                                <option value="F">Femenino</option>
-                                            </select>
-                                        </td>
-                                        <td data-label="Estudios"><input name="estudios_2" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="N.º">3</td>
-                                        <td data-label="Nombre"><input name="nombre_3" style="width:100%" type="text" />
-                                        </td>
-                                        <td data-label="Fecha de Nacimiento"><input name="fecha_3" style="width:100%"
-                                                type="date" /></td>
-                                        <td data-label="Sexo">
-                                            <select name="sexo_3" style="width:100%">
-                                                <option value="">Selecciona</option>
-                                                <option value="M">Masculino</option>
-                                                <option value="F">Femenino</option>
-                                            </select>
-                                        </td>
-                                        <td data-label="Estudios"><input name="estudios_3" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <!-- ... repetir hasta 10 ... -->
-                                    <tr>
-                                        <td data-label="N.º">4</td>
-                                        <td data-label="Nombre"><input name="nombre_4" style="width:100%" type="text" />
-                                        </td>
-                                        <td data-label="Fecha de Nacimiento"><input name="fecha_4" style="width:100%"
-                                                type="date" /></td>
-                                        <td data-label="Sexo">
-                                            <select name="sexo_4" style="width:100%">
-                                                <option value="">Selecciona</option>
-                                                <option value="M">Masculino</option>
-                                                <option value="F">Femenino</option>
-                                            </select>
-                                        </td>
-                                        <td data-label="Estudios"><input name="estudios_4" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <!-- del 5 al 10 -->
-                                    <tr>
-                                        <td data-label="N.º">5</td>
-                                        <td data-label="Nombre"><input name="nombre_5" style="width:100%" type="text" />
-                                        </td>
-                                        <td data-label="Fecha de Nacimiento"><input name="fecha_5" style="width:100%"
-                                                type="date" /></td>
-                                        <td data-label="Sexo"><select name="sexo_5" style="width:100%">
-                                                <option value="">Selecciona</option>
-                                                <option value="M">Masculino</option>
-                                                <option value="F">Femenino</option>
-                                            </select></td>
-                                        <td data-label="Estudios"><input name="estudios_5" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="N.º">6</td>
-                                        <td data-label="Nombre"><input name="nombre_6" style="width:100%" type="text" />
-                                        </td>
-                                        <td data-label="Fecha de Nacimiento"><input name="fecha_6" style="width:100%"
-                                                type="date" /></td>
-                                        <td data-label="Sexo"><select name="sexo_6" style="width:100%">
-                                                <option value="">Selecciona</option>
-                                                <option value="M">Masculino</option>
-                                                <option value="F">Femenino</option>
-                                            </select></td>
-                                        <td data-label="Estudios"><input name="estudios_6" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="N.º">7</td>
-                                        <td data-label="Nombre"><input name="nombre_7" style="width:100%" type="text" />
-                                        </td>
-                                        <td data-label="Fecha de Nacimiento"><input name="fecha_7" style="width:100%"
-                                                type="date" /></td>
-                                        <td data-label="Sexo"><select name="sexo_7" style="width:100%">
-                                                <option value="">Selecciona</option>
-                                                <option value="M">Masculino</option>
-                                                <option value="F">Femenino</option>
-                                            </select></td>
-                                        <td data-label="Estudios"><input name="estudios_7" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="N.º">8</td>
-                                        <td data-label="Nombre"><input name="nombre_8" style="width:100%" type="text" />
-                                        </td>
-                                        <td data-label="Fecha de Nacimiento"><input name="fecha_8" style="width:100%"
-                                                type="date" /></td>
-                                        <td data-label="Sexo"><select name="sexo_8" style="width:100%">
-                                                <option value="">Selecciona</option>
-                                                <option value="M">Masculino</option>
-                                                <option value="F">Femenino</option>
-                                            </select></td>
-                                        <td data-label="Estudios"><input name="estudios_8" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="N.º">9</td>
-                                        <td data-label="Nombre"><input name="nombre_9" style="width:100%" type="text" />
-                                        </td>
-                                        <td data-label="Fecha de Nacimiento"><input name="fecha_9" style="width:100%"
-                                                type="date" /></td>
-                                        <td data-label="Sexo"><select name="sexo_9" style="width:100%">
-                                                <option value="">Selecciona</option>
-                                                <option value="M">Masculino</option>
-                                                <option value="F">Femenino</option>
-                                            </select></td>
-                                        <td data-label="Estudios"><input name="estudios_9" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="N.º">10</td>
-                                        <td data-label="Nombre"><input name="nombre_10" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Fecha de Nacimiento"><input name="fecha_10" style="width:100%"
-                                                type="date" /></td>
-                                        <td data-label="Sexo"><select name="sexo_10" style="width:100%">
-                                                <option value="">Selecciona</option>
-                                                <option value="M">Masculino</option>
-                                                <option value="F">Femenino</option>
-                                            </select></td>
-                                        <td data-label="Estudios"><input name="estudios_10" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <table border="1" style="width:100%; border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th>N.º</th>
+                                    <th>Nombre</th>
+                                    <th>Fecha de Nacimiento</th>
+                                    <th>Sexo</th>
+                                    <th>Estudios</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- 10 filas editables -->
+                                <tr>
+                                    <td data-label="N.º">1</td>
+                                    <td data-label="Nombre"><input name="nombre_1" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_1" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo">
+                                        <select name="sexo_1" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select>
+                                    </td>
+                                    <td data-label="Estudios"><input name="estudios_1" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">2</td>
+                                    <td data-label="Nombre"><input name="nombre_2" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_2" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo">
+                                        <select name="sexo_2" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select>
+                                    </td>
+                                    <td data-label="Estudios"><input name="estudios_2" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">3</td>
+                                    <td data-label="Nombre"><input name="nombre_3" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_3" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo">
+                                        <select name="sexo_3" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select>
+                                    </td>
+                                    <td data-label="Estudios"><input name="estudios_3" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <!-- ... repetir hasta 10 ... -->
+                                <tr>
+                                    <td data-label="N.º">4</td>
+                                    <td data-label="Nombre"><input name="nombre_4" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_4" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo">
+                                        <select name="sexo_4" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select>
+                                    </td>
+                                    <td data-label="Estudios"><input name="estudios_4" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <!-- del 5 al 10 -->
+                                <tr>
+                                    <td data-label="N.º">5</td>
+                                    <td data-label="Nombre"><input name="nombre_5" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_5" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo"><select name="sexo_5" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select></td>
+                                    <td data-label="Estudios"><input name="estudios_5" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">6</td>
+                                    <td data-label="Nombre"><input name="nombre_6" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_6" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo"><select name="sexo_6" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select></td>
+                                    <td data-label="Estudios"><input name="estudios_6" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">7</td>
+                                    <td data-label="Nombre"><input name="nombre_7" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_7" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo"><select name="sexo_7" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select></td>
+                                    <td data-label="Estudios"><input name="estudios_7" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">8</td>
+                                    <td data-label="Nombre"><input name="nombre_8" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_8" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo"><select name="sexo_8" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select></td>
+                                    <td data-label="Estudios"><input name="estudios_8" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">9</td>
+                                    <td data-label="Nombre"><input name="nombre_9" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_9" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo"><select name="sexo_9" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select></td>
+                                    <td data-label="Estudios"><input name="estudios_9" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">10</td>
+                                    <td data-label="Nombre"><input name="nombre_10" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_10" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo"><select name="sexo_10" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select></td>
+                                    <td data-label="Estudios"><input name="estudios_10" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <h2>Ingresos</h2><label for="ingresos_familia">¿A cuánto ascienden los ingresos mensuales de tu
                         familia?</label><input name="ingresos_familia" style="width:100%; margin-bottom: 10px;"
@@ -699,110 +670,108 @@
                             value="otros" /> Otros</label>
                     <h2>ESTADO PSICOFISIOLÓGICOS</h2>
                     <div style="overflow-x:auto;">
-                        <div class="tabla-scroll">
-                            <table border="1" style="width:100%; border-collapse: collapse;">
-                                <thead>
-                                    <tr>
-                                        <th>INDICADORES</th>
-                                        <th>FRECUENTE/M</th>
-                                        <th>MUY FRECUENTE/M</th>
-                                        <th>NUNCA</th>
-                                        <th>ANTES</th>
-                                        <th>A VECES</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td data-label="INDICADORES">Manos y/o pies hinchados</td>
-                                        <td data-label="FRECUENTE/M"><input name="indicador_0" type="radio" /></td>
-                                        <td data-label="MUY FRECUENTE/M"><input name="indicador_0" type="radio" /></td>
-                                        <td data-label="NUNCA"><input name="indicador_0" type="radio" /></td>
-                                        <td data-label="ANTES"><input name="indicador_0" type="radio" /></td>
-                                        <td data-label="A VECES"><input name="indicador_0" type="radio" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="INDICADORES">Dolores en el vientre</td>
-                                        <td data-label="FRECUENTE/M"><input name="indicador_1" type="radio" /></td>
-                                        <td data-label="MUY FRECUENTE/M"><input name="indicador_1" type="radio" /></td>
-                                        <td data-label="NUNCA"><input name="indicador_1" type="radio" /></td>
-                                        <td data-label="ANTES"><input name="indicador_1" type="radio" /></td>
-                                        <td data-label="A VECES"><input name="indicador_1" type="radio" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="INDICADORES">Dolores de cabeza y/o vómitos</td>
-                                        <td data-label="FRECUENTE/M"><input name="indicador_2" type="radio" /></td>
-                                        <td data-label="MUY FRECUENTE/M"><input name="indicador_2" type="radio" /></td>
-                                        <td data-label="NUNCA"><input name="indicador_2" type="radio" /></td>
-                                        <td data-label="ANTES"><input name="indicador_2" type="radio" /></td>
-                                        <td data-label="A VECES"><input name="indicador_2" type="radio" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="INDICADORES">Pérdida del equilibrio</td>
-                                        <td data-label="FRECUENTE/M"><input name="indicador_3" type="radio" /></td>
-                                        <td data-label="MUY FRECUENTE/M"><input name="indicador_3" type="radio" /></td>
-                                        <td data-label="NUNCA"><input name="indicador_3" type="radio" /></td>
-                                        <td data-label="ANTES"><input name="indicador_3" type="radio" /></td>
-                                        <td data-label="A VECES"><input name="indicador_3" type="radio" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="INDICADORES">Fatiga y agotamiento</td>
-                                        <td data-label="FRECUENTE/M"><input name="indicador_4" type="radio" /></td>
-                                        <td data-label="MUY FRECUENTE/M"><input name="indicador_4" type="radio" /></td>
-                                        <td data-label="NUNCA"><input name="indicador_4" type="radio" /></td>
-                                        <td data-label="ANTES"><input name="indicador_4" type="radio" /></td>
-                                        <td data-label="A VECES"><input name="indicador_4" type="radio" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="INDICADORES">Pérdida de vista u oído</td>
-                                        <td data-label="FRECUENTE/M"><input name="indicador_5" type="radio" /></td>
-                                        <td data-label="MUY FRECUENTE/M"><input name="indicador_5" type="radio" /></td>
-                                        <td data-label="NUNCA"><input name="indicador_5" type="radio" /></td>
-                                        <td data-label="ANTES"><input name="indicador_5" type="radio" /></td>
-                                        <td data-label="A VECES"><input name="indicador_5" type="radio" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="INDICADORES">Dificultades para dormir</td>
-                                        <td data-label="FRECUENTE/M"><input name="indicador_6" type="radio" /></td>
-                                        <td data-label="MUY FRECUENTE/M"><input name="indicador_6" type="radio" /></td>
-                                        <td data-label="NUNCA"><input name="indicador_6" type="radio" /></td>
-                                        <td data-label="ANTES"><input name="indicador_6" type="radio" /></td>
-                                        <td data-label="A VECES"><input name="indicador_6" type="radio" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="INDICADORES">Pesadillas o terrores nocturnos a que:</td>
-                                        <td data-label="FRECUENTE/M"><input name="indicador_7" type="radio" /></td>
-                                        <td data-label="MUY FRECUENTE/M"><input name="indicador_7" type="radio" /></td>
-                                        <td data-label="NUNCA"><input name="indicador_7" type="radio" /></td>
-                                        <td data-label="ANTES"><input name="indicador_7" type="radio" /></td>
-                                        <td data-label="A VECES"><input name="indicador_7" type="radio" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="INDICADORES">Incontinencia (orina, heces)</td>
-                                        <td data-label="FRECUENTE/M"><input name="indicador_8" type="radio" /></td>
-                                        <td data-label="MUY FRECUENTE/M"><input name="indicador_8" type="radio" /></td>
-                                        <td data-label="NUNCA"><input name="indicador_8" type="radio" /></td>
-                                        <td data-label="ANTES"><input name="indicador_8" type="radio" /></td>
-                                        <td data-label="A VECES"><input name="indicador_8" type="radio" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="INDICADORES">Tartamudeos al explicarse</td>
-                                        <td data-label="FRECUENTE/M"><input name="indicador_9" type="radio" /></td>
-                                        <td data-label="MUY FRECUENTE/M"><input name="indicador_9" type="radio" /></td>
-                                        <td data-label="NUNCA"><input name="indicador_9" type="radio" /></td>
-                                        <td data-label="ANTES"><input name="indicador_9" type="radio" /></td>
-                                        <td data-label="A VECES"><input name="indicador_9" type="radio" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="INDICADORES">Miedos intensos ante cosas</td>
-                                        <td data-label="FRECUENTE/M"><input name="indicador_10" type="radio" /></td>
-                                        <td data-label="MUY FRECUENTE/M"><input name="indicador_10" type="radio" /></td>
-                                        <td data-label="NUNCA"><input name="indicador_10" type="radio" /></td>
-                                        <td data-label="ANTES"><input name="indicador_10" type="radio" /></td>
-                                        <td data-label="A VECES"><input name="indicador_10" type="radio" /></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <table border="1" style="width:100%; border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th>INDICADORES</th>
+                                    <th>FRECUENTE/M</th>
+                                    <th>MUY FRECUENTE/M</th>
+                                    <th>NUNCA</th>
+                                    <th>ANTES</th>
+                                    <th>A VECES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="INDICADORES">Manos y/o pies hinchados</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_0" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_0" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_0" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_0" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_0" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Dolores en el vientre</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_1" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_1" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_1" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_1" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_1" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Dolores de cabeza y/o vómitos</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_2" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_2" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_2" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_2" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_2" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Pérdida del equilibrio</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_3" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_3" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_3" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_3" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_3" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Fatiga y agotamiento</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_4" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_4" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_4" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_4" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_4" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Pérdida de vista u oído</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_5" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_5" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_5" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_5" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_5" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Dificultades para dormir</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_6" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_6" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_6" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_6" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_6" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Pesadillas o terrores nocturnos a que:</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_7" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_7" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_7" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_7" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_7" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Incontinencia (orina, heces)</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_8" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_8" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_8" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_8" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_8" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Tartamudeos al explicarse</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_9" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_9" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_9" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_9" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_9" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Miedos intensos ante cosas</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_10" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_10" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_10" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_10" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_10" type="radio" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <h2>Observaciones de Higiene</h2><label for="observaciones_higiene">Describa
                         brevemente:</label><textarea name="observaciones_higiene" rows="4"
@@ -875,142 +844,123 @@
                     </div>
                     <h3>HERMANOS: <small>(Con cada uno de ellos)</small></h3>
                     <div style="overflow-x:auto;">
-                        <div class="tabla-scroll">
-                            <table border="1" style="width:100%; border-collapse: collapse;">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Nombre</th>
-                                        <th>Relación</th>
-                                        <th>Actitud</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td data-label="">1</td>
-                                        <td data-label="Nombre"><input name="hermano_nombre_1" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Relación"><input name="hermano_relacion_1" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Actitud"><input name="hermano_actitud_1" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="">2</td>
-                                        <td data-label="Nombre"><input name="hermano_nombre_2" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Relación"><input name="hermano_relacion_2" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Actitud"><input name="hermano_actitud_2" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="">3</td>
-                                        <td data-label="Nombre"><input name="hermano_nombre_3" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Relación"><input name="hermano_relacion_3" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Actitud"><input name="hermano_actitud_3" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="">4</td>
-                                        <td data-label="Nombre"><input name="hermano_nombre_4" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Relación"><input name="hermano_relacion_4" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Actitud"><input name="hermano_actitud_4" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="">5</td>
-                                        <td data-label="Nombre"><input name="hermano_nombre_5" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Relación"><input name="hermano_relacion_5" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Actitud"><input name="hermano_actitud_5" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="">6</td>
-                                        <td data-label="Nombre"><input name="hermano_nombre_6" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Relación"><input name="hermano_relacion_6" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Actitud"><input name="hermano_actitud_6" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="">7</td>
-                                        <td data-label="Nombre"><input name="hermano_nombre_7" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Relación"><input name="hermano_relacion_7" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Actitud"><input name="hermano_actitud_7" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="">8</td>
-                                        <td data-label="Nombre"><input name="hermano_nombre_7" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Relación"><input name="hermano_relacion_7" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Actitud"><input name="hermano_actitud_7" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="">9</td>
-                                        <td data-label="Nombre"><input name="hermano_nombre_7" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Relación"><input name="hermano_relacion_7" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Actitud"><input name="hermano_actitud_7" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                    <tr>
-                                        <td data-label="">10</td>
-                                        <td data-label="Nombre"><input name="hermano_nombre_7" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Relación"><input name="hermano_relacion_7" style="width:100%"
-                                                type="text" /></td>
-                                        <td data-label="Actitud"><input name="hermano_actitud_7" style="width:100%"
-                                                type="text" /></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <table border="1" style="width:100%; border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Nombre</th>
+                                    <th>Relación</th>
+                                    <th>Actitud</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="">1</td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_1" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_1" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_1" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">2</td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_2" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_2" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_2" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">3</td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_3" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_3" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_3" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">4</td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_4" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_4" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_4" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">5</td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_5" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_5" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_5" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">6</td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_6" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_6" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_6" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">7</td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_7" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">8</td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_7" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">9</td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_7" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">10</td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_7" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <h2>Otros aspectos del ambiente familiar</h2>
-                    <p>1. ¿Con quién te sientes más ligado afectivamente?</p><label><input name="ligado_afectivamente"
+                    <p>¿Con quién te sientes más ligado afectivamente?</p><label><input name="ligado_afectivamente"
                             type="radio" value="Madre" /> Madre</label><label><input name="ligado_afectivamente"
                             type="radio" value="Padre" /> Padre</label><label><input name="ligado_afectivamente"
                             type="radio" value="Hermano" /> Hermano</label><label><input name="ligado_afectivamente"
                             type="radio" value="Otros" /> Otros</label>
-                    <p>2. Especifica por qué:</p><input name="porque_ligado" style="width:100%" type="text" />
-                    <p>3. ¿Quién se ocupa más directamente de tu educación?</p><input name="quien_educacion"
+                    <p>Especifica por qué:</p><input name="porque_ligado" style="width:100%" type="text" />
+                    <p>¿Quién se ocupa más directamente de tu educación?</p><input name="quien_educacion"
                         style="width:100%" type="text" />
-                    <p>4. ¿Quién ha influido más en tu decisión para estudiar esta carrera?</p><input
+                    <p>¿Quién ha influido más en tu decisión para estudiar esta carrera?</p><input
                         name="quien_influye_carrera" style="width:100%" type="text" />
-                    <p>5. ¿Consideras importante facilitar algún otro dato sobre tu ambiente familiar?</p><textarea
+                    <p>¿Consideras importante facilitar algún otro dato sobre tu ambiente familiar?</p><textarea
                         name="otros_datos_familiares" rows="4" style="width:100%"></textarea>
                 </div>
-                <!-- ******************************************************************* -->
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <!-- ******************************************************************* -->
-                <!-- ******************************************************************* -->
-                <!-- ******************************************************************* -->
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
                 <!-- ******************************************************************* -->
                 <button style="
               margin-top: 20px;
