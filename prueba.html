@@ -1,10 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style3.css" rel="stylesheet" />
   <title>Estilos de RadioButtons</title>
   <style>
+    .formulario {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .subtablink {
+      padding: 8px 12px;
+      margin: 2px;
+      background-color: #ddd;
+      border: none;
+      cursor: pointer;
+    }
+
+    .subtablink.active {
+      background-color: #555;
+      color: white;
+    }
+
+    .tablink,
+    .subtablink {
+      padding: 8px 12px;
+      font-size: 0.85rem;
+    }
+
+    @media screen and (max-width: 768px) {
+
+      h1,
+      h3,
+      h3 {
+        font-size: 1rem;
+      }
+
+      label {
+        font-size: 0.75rem;
+      }
+
+      .tablink,
+      .subtablink {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+      }
+
+      table {
+        font-size: 0.75rem;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .header-title {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 5px;
+      }
+
+      .subheader {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      .botonera {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .botonera button {
+        width: 90%;
+        font-size: 1.2rem;
+        padding: 3px 10px;
+      }
+
+      .formulario h3,
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      .back-button {
+        display: block;
+        width: 50%;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.2rem;
+      }
+    }
+
+    /*********************** RadioButtons *****************************/
     body {
       font-family: sans-serif;
       background-color: #f5f5f5;
@@ -43,7 +131,7 @@
       transition: all 0.3s ease;
     }
 
-    .custom-label input[type="radio"]:checked + label {
+    .custom-label input[type="radio"]:checked+label {
       background-color: #007bff;
       color: white;
     }
@@ -62,12 +150,12 @@
       color: #333;
       border-radius: 10px;
       font-weight: bold;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
-    .button-style input[type="radio"]:checked + label {
+    .button-style input[type="radio"]:checked+label {
       background-color: #4caf50;
       color: white;
     }
@@ -90,7 +178,7 @@
       transition: all 0.3s ease;
     }
 
-    .icon-style input[type="radio"]:checked + label {
+    .icon-style input[type="radio"]:checked+label {
       border-color: #ff9800;
       background-color: #fff3e0;
     }
@@ -109,40 +197,80 @@
     }
   </style>
 </head>
+
 <body>
-  <h1>Estilos de RadioButtons</h1>
 
-  <div class="section classic">
-    <h2>1. Estilo clásico</h2>
-    <label><input type="radio" name="classic" checked> Opción 1</label>
-    <label><input type="radio" name="classic"> Opción 2</label>
+  <div class="subtab-nav">
+    <button class="subtablink" onclick="mostrarSubtab('RadioButtons', this)" type="button">Estilos de
+      RadioButtons</button>
+    <button class="subtablink" onclick="mostrarSubtab('RadioButtonss', this)" type="button">Estilos de
+      Calendario</button>
+  </div>
+  <div class="subtab-content" id="RadioButtons" style="display: block">
+    <h1>Estilos de RadioButtons</h1>
+
+    <div class="section classic">
+      <h2>1. Estilo clásico</h2>
+      <label><input type="radio" name="classic" checked> Opción 1</label>
+      <label><input type="radio" name="classic"> Opción 2</label>
+    </div>
+
+    <div class="section custom-label">
+      <h2>2. Etiquetas personalizadas</h2>
+      <input type="radio" id="custom1" name="custom" checked>
+      <label for="custom1">Personal 1</label>
+
+      <input type="radio" id="custom2" name="custom">
+      <label for="custom2">Personal 2</label>
+    </div>
+
+    <div class="section button-style">
+      <h2>3. Estilo botón</h2>
+      <input type="radio" id="btn1" name="button" checked>
+      <label for="btn1">Botón 1</label>
+
+      <input type="radio" id="btn2" name="button">
+      <label for="btn2">Botón 2</label>
+    </div>
+
+    <div class="section icon-style">
+      <h2>4. Con íconos (usando texto emoji)</h2>
+      <input type="radio" id="icon1" name="icon" checked>
+      <label for="icon1"><i>📱</i> Móvil</label>
+
+      <input type="radio" id="icon2" name="icon">
+      <label for="icon2"><i>💻</i> Laptop</label>
+    </div>
+  </div>
+  <div class="subtab-content" id="RadioButtonss" style="display: block">
   </div>
 
-  <div class="section custom-label">
-    <h2>2. Etiquetas personalizadas</h2>
-    <input type="radio" id="custom1" name="custom" checked>
-    <label for="custom1">Personal 1</label>
+  <a class="back-button" href="index.html">Volver al inicio</a>
 
-    <input type="radio" id="custom2" name="custom">
-    <label for="custom2">Personal 2</label>
-  </div>
+  <script>
+    function mostrarFormulario(id) {
+      document
+        .querySelectorAll(".formulario")
+        .forEach((el) => (el.style.display = "none"));
+      document.getElementById(id).style.display = "block";
+    }
 
-  <div class="section button-style">
-    <h2>3. Estilo botón</h2>
-    <input type="radio" id="btn1" name="button" checked>
-    <label for="btn1">Botón 1</label>
 
-    <input type="radio" id="btn2" name="button">
-    <label for="btn2">Botón 2</label>
-  </div>
+    function mostrarSubtab(id, el) {
+      document.querySelectorAll('.subtab-content').forEach(div => div.style.display = "none");
+      document.querySelectorAll('.subtablink').forEach(btn => btn.classList.remove("active"));
+      document.getElementById(id).style.display = "block";
+      el.classList.add("active");
+    }
 
-  <div class="section icon-style">
-    <h2>4. Con íconos (usando texto emoji)</h2>
-    <input type="radio" id="icon1" name="icon" checked>
-    <label for="icon1"><i>📱</i> Móvil</label>
-
-    <input type="radio" id="icon2" name="icon">
-    <label for="icon2"><i>💻</i> Laptop</label>
-  </div>
+    window.onload = function () {
+      mostrarFormulario('form1');
+      const firstSubtab = document.querySelector('.subtablink');
+      if (firstSubtab) {
+        mostrarSubtab('RadioButtons', firstSubtab);
+      }
+    };
+  </script>
 </body>
+
 </html>

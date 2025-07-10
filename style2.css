@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Dancing+Script:wght@400..700&family=Exo+2:ital@0;1&family=Pacifico&family=Playwrite+AU+SA:wght@100..400&family=Tangerine:wght@400;700&display=swap');
+
+:root {
+    --black: #000000;
+    --white: #fff;
+    --font: "Pacifico", serif;
+    --font2: "Exo 2", serif;
+    --font3: "Playwrite AU SA", serif;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -105,12 +115,15 @@ body {
         flex-direction: column;
         align-items: center;
     }
+
     .header-title {
         font-size: 16px;
         margin-top: 10px;
     }
+
     .item {
         width: 100%;
     }
 }
+
 /*******************************************************************************/
