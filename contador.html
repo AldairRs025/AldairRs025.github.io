@@ -8,6 +8,10 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link href="style3.css" rel="stylesheet" />
     <style>
+        :root {
+            --red: #8a1538;
+        }
+
         .formulario {
             display: none;
             margin-top: 20px;
@@ -16,7 +20,7 @@
         .botonera button {
             margin: 5px;
             padding: 10px 15px;
-            background-color: #8a1538;
+            background-color: var(--red);
             color: white;
             border: none;
             cursor: pointer;
@@ -291,6 +295,30 @@
             font-size: 0.85rem;
         }
 
+        /* Estilo botón */
+        .button-style input[type="radio"] {
+            display: none;
+        }
+
+        .button-style label {
+            display: inline-block;
+            padding: 12px 17px;
+            margin: 5px;
+            border: none;
+            background-color: #e0e0e0;
+            color: #333;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-style input[type="radio"]:checked+label {
+            background-color: var(--red);
+            color: white;
+        }
+
         @media screen and (max-width: 768px) {
 
             h1,
@@ -408,31 +436,51 @@
                             value="56" /></label><label>Fecha de Nacimiento: <input name="fecha_nacimiento" type="date"
                             value="2002-04-22" /></label>
                     <label>Sexo:</label>
-                    <label>Masculino <input name="sexo" type="radio" value="Masculino" /></label>
-                    <label>Femenino <input name="sexo" type="radio" value="Femenino" /></label>
+                    <div class="button-style">
+                        <input type="radio" id="btn1" name="sexo" value="Masculino" checked>
+                        <label for="btn1">Masculino</label>
+                        <input type="radio" id="btn2" name="sexo" value="Femenino">
+                        <label for="btn2">Femenino</label>
+                    </div>
                     <label>Edad: <input name="edad" type="number" value="23" /></label><label>Estado civil:</label>
                     <select id="EstadoCivil" name="estado_civil">
                         <!-- <option disabled select>Seleccionar</option> -->
                         <option value="">Seleccionar</option>
                         <option value="Casado">Casado</option>
                         <option value="Casado">Soltero</option>
-                    </select><label>¿Trabaja?:</label><label><input name="trabaja" type="radio"
-                            value="Si" />Si</label><label><input name="trabaja" type="radio"
-                            value="No" />No</label><label>Lugar de Nacimiento: <input name="lugar_nacimiento"
-                            type="text" value="X" /></label><label>Domicilio Actual: <input name="domicilio_actual"
-                            type="text" value="X" /></label><label>Teléfono: <input name="telefono" type="text"
+                    </select><label>¿Trabaja?:</label>
+                    <div class="button-style">
+                        <input type="radio" id="btn3" name="trabaja" value="Si" checked>
+                        <label for="btn3">Si</label>
+                        <input type="radio" id="btn4" name="trabaja" value="No">
+                        <label for="btn4">No</label>
+                    </div>
+                    <label>Lugar de Nacimiento: <input name="lugar_nacimiento" type="text"
+                            value="X" /></label><label>Domicilio Actual: <input name="domicilio_actual" type="text"
+                            value="X" /></label><label>Teléfono: <input name="telefono" type="text"
                             value="5614040411" /></label><label>Código Postal: <input name="cp" type="text"
                             value="56613" /></label><label>Email: <input name="email" type="email"
                             value="aldair_077ramon@hotmail.com" /></label>
                 </div>
                 <div class="subtab-content" id="datos_familiares" style="display: none">
-                    <label>Tipo de Vivienda:</label><label><input name="vivienda" type="radio" value="Casa" />
-                        Casa</label><label><input name="vivienda" type="radio"
-                            value="Departamento" />Departamento</label><label>¿La casa o departamento
-                        es?:</label><label><input name="tipo" select="" type="radio" value="Propia" />
-                        Propia</label><label><input name="tipo" type="radio" value="Rentada" />
-                        Rentada</label><label><input name="tipo" type="radio" value="Prestada" />
-                        Prestada</label><label><input name="tipo" type="radio" value="Otros" /> Otros</label>
+                    <label>Tipo de Vivienda:</label>
+                    <div class="button-style">
+                        <input type="radio" id="btn5" name="vivienda" value="Casa" checked>
+                        <label for="btn5">Casa</label>
+                        <input type="radio" id="btn6" name="vivienda" value="Departamento">
+                        <label for="btn6">Departamento</label>
+                    </div>
+                    <label>¿La casa o departamento es?:</label>
+                    <div class="button-style">
+                        <input type="radio" id="btn7" name="tipo" value="Propia" checked>
+                        <label for="btn7">Propia</label>
+                        <input type="radio" id="btn8" name="tipo" value="Rentada">
+                        <label for="btn8">Rentada</label>
+                        <input type="radio" id="btn9" name="tipo" value="Prestada">
+                        <label for="btn9">Prestada</label>
+                        <input type="radio" id="btn10" name="tipo" value="Otros">
+                        <label for="btn10">Otros</label>
+                    </div>
                     <label>Especifique: <input name="tipo_otro" type="text" value="X" /></label>
                     <label>Número de personas con las que vives:<input name="num_personas" type="number"
                             value="4" /></label>
@@ -836,11 +884,19 @@
                         </table>
                     </div>
                     <h3>Otros aspectos del ambiente familiar</h3>
-                    <p>¿Con quién te sientes más ligado afectivamente?</p><label><input name="ligado_afectivamente"
-                            type="radio" value="Madre" /> Madre</label><label><input name="ligado_afectivamente"
-                            type="radio" value="Padre" /> Padre</label><label><input name="ligado_afectivamente"
-                            type="radio" value="Hermano" /> Hermano</label><label><input name="ligado_afectivamente"
-                            type="radio" value="Otros" /> Otros</label>
+                    <p>¿Con quién te sientes más ligado afectivamente?</p>
+                    
+                    <div class="button-style">
+                        <input type="radio" id="btn11" name="ligado_afectivamente" value="Madre" checked>
+                        <label for="btn11">Madre</label>
+                        <input type="radio" id="btn12" name="ligado_afectivamente" value="Padre">
+                        <label for="btn12">Padre</label>
+                        <input type="radio" id="btn13" name="ligado_afectivamente" value="Hermano">
+                        <label for="btn13">Hermano</label>
+                        <input type="radio" id="btn14" name="ligado_afectivamente" value="Otros">
+                        <label for="btn14">Otros</label>
+                    </div>
+
                     <p>Especifica por qué:</p><input name="porque_ligado" style="width:100%" type="text" />
                     <p>¿Quién se ocupa más directamente de tu educación?</p><input name="quien_educacion"
                         style="width:100%" type="text" />
@@ -896,10 +952,15 @@
                 <div class="subtab-content" id="datos_medicos" style="display: none">
                     <h3>Prescripción médica</h3>
                     <p>¿Cuenta con prescripción médica de alguna deficiencia sensorial o funcional que te obligue a
-                        llevar
-                        aparatos o controlar tu actividad física?</p><label><input name="prescripcion" type="radio"
-                            value="si" /> Sí</label>
-                    <label><input name="prescripcion" type="radio" value="no" /> No</label>
+                        llevar aparatos o controlar tu actividad física?</p>
+                        
+                    <div class="button-style">
+                        <input type="radio" id="btn13" name="prescripcion" value="Sí" checked>
+                        <label for="btn13">Sí</label>
+                        <input type="radio" id="btn14" name="prescripcion" value="Padre">
+                        <label for="btn14">No</label>
+                    </div>
+                    
                     <p><strong>¿Indica cuáles?</strong></p><label><input name="deficiencia" type="checkbox"
                             value="vista" /> Vista</label><label><input name="deficiencia" type="checkbox"
                             value="oido" /> Oído</label><label><input name="deficiencia" type="checkbox"
