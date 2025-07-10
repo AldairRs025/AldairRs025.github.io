@@ -94,7 +94,7 @@
         }
 
         .formulario label {
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
         input[type="text"],
@@ -216,13 +216,14 @@
             margin: auto;
         }
 
+        /*Tammaño de txt contenido inputs*/
         input[type="text"],
         input[type="email"],
         input[type="date"],
         input[type="number"],
         select,
         textarea {
-            font-size: 0.9em !important;
+            font-size: 1.1em !important;
             padding: 2px 4px !important;
             margin-top: 2px !important;
             line-height: 1.1;
@@ -263,7 +264,7 @@
 
         table {
             width: 100%;
-            font-size: 0.85rem;
+            font-size: 1rem;
             border-collapse: collapse;
         }
 
@@ -289,13 +290,14 @@
             justify-content: center;
         }
 
+        /*Tammaño de txt pestañas*/
         .tablink,
         .subtablink {
             padding: 8px 12px;
-            font-size: 0.85rem;
+            font-size: 1rem;
         }
 
-        /* Estilo botón */
+        /***************************** Estilo RADIO *****************************/
         .button-style input[type="radio"] {
             display: none;
         }
@@ -386,6 +388,22 @@
                 font-size: 0.9rem;
             }
         }
+
+        /*********************** Inputs DATE *****************************/
+
+        /* Estilo de borde inferior solamente */
+        .underline input[type="date"] {
+            border: none;
+            border-bottom: 2px solid #4bb53f;
+            border-radius: 0;
+        }
+
+        .underline input[type="date"]:focus {
+            border-bottom-color: #ff4081;
+            outline: none;
+        }
+        
+        /*********************** Inputs *****************************/
     </style>
 </head>
 
@@ -433,8 +451,13 @@
                     <label>Nombre: <input name="nombre" type="text" value="Aldair" /></label><label>Estatura: <input
                             name="estatura" type="text" value="1.60" /></label><label>Carrera: <input name="carrera"
                             type="text" value="ISC" /></label><label>Peso: <input name="peso" type="text"
-                            value="56" /></label><label>Fecha de Nacimiento: <input name="fecha_nacimiento" type="date"
-                            value="2002-04-22" /></label>
+                            value="56" /></label>
+
+                    <div class="underline">
+                        <label for="fecha_nacimiento">Fecha de Nacimiento: </label>
+                        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="2002-04-22">
+                    </div>
+
                     <label>Sexo:</label>
                     <div class="button-style">
                         <input type="radio" id="btn1" name="sexo" value="Masculino" checked>
@@ -885,7 +908,7 @@
                     </div>
                     <h3>Otros aspectos del ambiente familiar</h3>
                     <p>¿Con quién te sientes más ligado afectivamente?</p>
-                    
+
                     <div class="button-style">
                         <input type="radio" id="btn11" name="ligado_afectivamente" value="Madre" checked>
                         <label for="btn11">Madre</label>
@@ -953,7 +976,7 @@
                     <h3>Prescripción médica</h3>
                     <p>¿Cuenta con prescripción médica de alguna deficiencia sensorial o funcional que te obligue a
                         llevar aparatos o controlar tu actividad física?</p>
-                        
+
                     <div class="button-style">
                         <input type="radio" id="btn15" name="prescripcion" value="Sí" checked>
                         <label for="btn15">Sí</label>
@@ -1083,7 +1106,7 @@
               padding: 10px 20px;
               border: none;
               border-radius: 5px;
-              cursor: pointer;
+              cursor: pointer; font-size: 1rem;
             " type="submit">
                     Guardar en base de datos
                 </button>
@@ -1097,7 +1120,7 @@
         </div>
     </div>
     <a class="back-button" href="index.html">Volver al inicio</a>
-    
+
     <script>
         function mostrarFormulario(id) {
             document
