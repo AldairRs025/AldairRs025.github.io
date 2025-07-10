@@ -357,49 +357,6 @@
                 font-size: 0.9rem;
             }
         }
-
-        @media screen and (max-width: 768px) {
-
-            label input[type="radio"],
-            label input[type="checkbox"] {
-                margin-right: 8px;
-                transform: scale(1.2);
-                vertical-align: middle;
-            }
-
-            label {
-                display: flex;
-                align-items: center;
-                gap: 6px;
-                margin: 6px 0;
-                font-size: 0.9rem;
-            }
-
-            .formulario label:has(input[type="radio"]),
-            .formulario label:has(input[type="checkbox"]) {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                align-items: center;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            label {
-                display: flex;
-                flex-direction: row-reverse;
-                justify-content: flex-end;
-                align-items: center;
-                gap: 8px;
-                margin: 6px 0;
-            }
-
-            label input[type="radio"],
-            label input[type="checkbox"] {
-                margin: 0;
-                transform: scale(1.2);
-            }
-        }
     </style>
 </head>
 
@@ -444,30 +401,28 @@
                         Medicos</button>
                 </div>
                 <div class="subtab-content" id="datos_personales" style="display: block">
-                    <label>Nombre: <input name="nombre" type="text" value="Aldair" /></label>
-                    <label>Estatura: <input name="estatura" type="text" value="1.60" /></label>
-                    <label>Carrera: <input name="carrera" type="text" value="ISC" /></label>
-                    <label>Peso: <input name="peso" type="text" value="56" /></label>
-                    <label>Fecha de Nacimiento: <input name="fecha_nacimiento" type="date" value="2002-04-22" /></label>
+                    <label>Nombre: <input name="nombre" type="text" value="Aldair" /></label><label>Estatura: <input
+                            name="estatura" type="text" value="1.60" /></label><label>Carrera: <input name="carrera"
+                            type="text" value="ISC" /></label><label>Peso: <input name="peso" type="text"
+                            value="56" /></label><label>Fecha de Nacimiento: <input name="fecha_nacimiento" type="date"
+                            value="2002-04-22" /></label>
                     <label>Sexo:</label>
-                    <label>Masculino <input name="sexo" type="radio" value="Masculino" /></label>
+                    <label><input name="sexo" type="radio" value="Masculino" /> Masculino <input name="sexo" type="radio" value="Masculino" /></label>
                     <label>Femenino <input name="sexo" type="radio" value="Femenino" /></label>
-                    <label>Edad: <input name="edad" type="number" value="23" /></label>
-                    <label>Estado civil:</label>
+                    <label>Edad: <input name="edad" type="number" value="23" /></label><label>Estado civil:</label>
                     <select id="EstadoCivil" name="estado_civil">
                         <!-- <option disabled select>Seleccionar</option> -->
                         <option value="">Seleccionar</option>
                         <option value="Casado">Casado</option>
                         <option value="Casado">Soltero</option>
-                    </select>
-                    <label>¿Trabaja?:</label>
-                    <label><input name="trabaja" type="radio" value="Si" />Si</label>
-                    <label><input name="trabaja" type="radio" value="No" />No</label>
-                    <label>Lugar de Nacimiento: <input name="lugar_nacimiento" type="text" value="X" /></label>
-                    <label>Domicilio Actual: <input name="domicilio_actual" type="text" value="X" /></label>
-                    <label>Teléfono: <input name="telefono" type="text" value="5614040411" /></label>
-                    <label>Código Postal: <input name="cp" type="text" value="56613" /></label>
-                    <label>Email: <input name="email" type="email" value="aldair_077ramon@hotmail.com" /></label>
+                    </select><label>¿Trabaja?:</label><label><input name="trabaja" type="radio"
+                            value="Si" />Si</label><label><input name="trabaja" type="radio"
+                            value="No" />No</label><label>Lugar de Nacimiento: <input name="lugar_nacimiento"
+                            type="text" value="X" /></label><label>Domicilio Actual: <input name="domicilio_actual"
+                            type="text" value="X" /></label><label>Teléfono: <input name="telefono" type="text"
+                            value="5614040411" /></label><label>Código Postal: <input name="cp" type="text"
+                            value="56613" /></label><label>Email: <input name="email" type="email"
+                            value="aldair_077ramon@hotmail.com" /></label>
                 </div>
                 <div class="subtab-content" id="datos_familiares" style="display: none">
                     <label>Tipo de Vivienda:</label><label><input name="vivienda" type="radio" value="Casa" />
@@ -934,6 +889,8 @@
                             </tr>
                         </tbody>
                     </table>
+
+
                 </div>
                 <div class="subtab-content" id="datos_medicos" style="display: none">
                     <h3>Prescripción médica</h3>
