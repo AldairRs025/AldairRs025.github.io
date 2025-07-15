@@ -447,14 +447,59 @@
     }
 }
 
+
+
+
 @media screen and (max-width: 768px) {
+    /* Mostrar nuevamente el contenido del Formulario 2 y convertirlo a formato vertical */
     #form2 table,
     #form2 thead,
     #form2 tbody,
     #form2 tr,
     #form2 td,
     #form2 th {
+        display: block !important;
+        width: 100%;
+    }
+
+    #form2 thead {
         display: none !important;
+    }
+
+    #form2 tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+    }
+
+    #form2 td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 10px;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eaeaea;
+        box-sizing: border-box;
+    }
+
+    #form2 td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        flex: 1 1 48%;
+        padding-right: 10px;
+    }
+
+    #form2 td:last-child {
+        border-bottom: none;
+    }
+
+    /* Asegurar inputs y selects usen 100% de ancho */
+    #form2 table input,
+    #form2 table select {
+        width: 100%;
+        font-size: 1rem;
     }
 }
 </style>
