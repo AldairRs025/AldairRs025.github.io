@@ -403,7 +403,50 @@
         }
 
         /*********************** Inputs *****************************/
-    </style>
+    
+@media screen and (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: #f9f9f9;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 10px;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        flex: 1 1 50%;
+        padding-right: 10px;
+    }
+
+    td:last-child {
+        border-bottom: none;
+    }
+
+    table input, table select {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+</style>
 </head>
 <body>
 <div class="divider"></div>
@@ -1336,8 +1379,6 @@
                     Guardar en base de datos
                 </button>
 </form>
-
-<!-- <a class="back-button" href="index.html" style="display: block; text-align: center; margin-top: 20px;">Volver al inicio</a> -->
 </div>
 <div class="formulario" id="form2">
 <h3>Formulario 2 – Test de Autoestima</h3>
@@ -1349,10 +1390,13 @@
 <table border="1" style="width:100%; border-collapse: collapse;">
 <tr>
 <td rowspan="5" style="width:40px; text-align:center;">1</td>
-<td style="background:#d9d9d9;">A la hora de tomar decisiones en tu vida, como proponer cosas nuevas en el trabajo, iniciar alguna actividad de ocio, o elegir un color nuevo para pintar tu casa, ¿sueles buscar la aprobación o el apoyo de las personas que te rodean?</td>
+<td style="background:#d9d9d9;">A la hora de tomar decisiones en tu vida, como proponer cosas
+                            nuevas en el trabajo, iniciar alguna actividad de ocio, o elegir un color nuevo para pintar
+                            tu casa, ¿sueles buscar la aprobación o el apoyo de las personas que te rodean?</td>
 </tr>
 <tr>
-<td>No, consideras que tu opinión sea buena y que la de los demás no tenga por qué serlo siempre.</td>
+<td>No, consideras que tu opinión sea buena y que la de los demás no tenga por qué serlo
+                            siempre.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input checked="" id="q1_A" name="p1" type="radio" value="A"/>
@@ -1361,7 +1405,8 @@
 </td>
 </tr>
 <tr>
-<td>Sí, pero sólo ante las decisiones que consideras demasiado importantes como para actuar precipitadamente.</td>
+<td>Sí, pero sólo ante las decisiones que consideras demasiado importantes como para actuar
+                            precipitadamente.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q1_B" name="p1" type="radio" value="B"/>
@@ -1370,7 +1415,8 @@
 </td>
 </tr>
 <tr>
-<td>Sí, siempre que puedes consultas con los demás. Te equivocas con frecuencia y quieres hacer las cosas bien.</td>
+<td>Sí, siempre que puedes consultas con los demás. Te equivocas con frecuencia y quieres hacer
+                            las cosas bien.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q1_C" name="p1" type="radio" value="C"/>
@@ -1379,24 +1425,30 @@
 </td>
 </tr>
 <tr>
-<td>Depende de la decisión. Sueles tener claro lo que vas a hacer, pero consideras las posibilidades que te ofrecen los demás.</td>
+<td>Depende de la decisión. Sueles tener claro lo que vas a hacer, pero consideras las
+                            posibilidades que te ofrecen los demás.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q1_D" name="p1" type="radio" value="D"/>
 <label for="q1_D">D</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
 <td rowspan="5" style="width:40px; text-align:center;">2</td>
-<td colspan="2" style="background:#d9d9d9;">Imagina que estás en una reunión social o familiar importante; adviertes que 110 vas vestido para la ocasión y que desentonas con los demás, ¿cómo te comportas?</td>
+<td colspan="2" style="background:#d9d9d9;">Imagina que estás en una reunión social o familiar
+                            importante; adviertes que 110 vas vestido para la ocasión y que desentonas con los demás,
+                            ¿cómo te comportas?</td>
 </tr>
 <tr>
-<td>No le das importancia, te comportas con naturalidad y si alguien te lo comenta haces alguna broma al respecto.</td>
+<td>No le das importancia, te comportas con naturalidad y si alguien te lo comenta haces alguna
+                            broma al respecto.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input checked="" id="q2_A" name="p2" type="radio" value="A"/>
 <label for="q2_A">A</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
 <td>Te da mucha vergüenza. Procuras situarte en algún lugar discreto y pasar desapercibido.</td>
@@ -1404,287 +1456,369 @@
 <div class="button-style">
 <input id="q2_B" name="p2" type="radio" value="B"/>
 <label for="q2_B">B</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Te sientes incómodo pero tratas de no pensar en ello, te integras en la reunión y das alguna excusa por tu error.</td>
+<td>Te sientes incómodo pero tratas de no pensar en ello, te integras en la reunión y das alguna
+                            excusa por tu error.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q2_C" name="p2" type="radio" value="C"/>
 <label for="q2_C">C</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>No te importa nada en absoluto, aunque no lleves la ropa adecuada tienes estilo y sabes llevar bien cualquier cosa.</td>
+<td>No te importa nada en absoluto, aunque no lleves la ropa adecuada tienes estilo y sabes
+                            llevar bien cualquier cosa.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q2_D" name="p2" type="radio" value="D"/>
 <label for="q2_D">D</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
 <td rowspan="5" style="width:40px; text-align:center;">3</td>
-<td colspan="2" style="background:#d9d9d9;">Tienes muchas ganas de irte a comprar ropa y le pides a algún amigo que te acompañe. Esta persona es más alta y más atractiva que tú, y todo lo que se prueba le queda mucho mejor que a ti.</td>
+<td colspan="2" style="background:#d9d9d9;">Tienes muchas ganas de irte a comprar ropa y le
+                            pides a algún amigo que te acompañe. Esta persona es más alta y más atractiva que tú, y todo
+                            lo que se prueba le queda mucho mejor que a ti.</td>
 </tr>
 <tr>
-<td>Admiras el estilo de tu acompañante, al final compras un par de prendas necesarias pero muy simples en cuanto a forma y color.</td>
+<td>Admiras el estilo de tu acompañante, al final compras un par de prendas necesarias pero muy
+                            simples en cuanto a forma y color.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input checked="" id="q3_A" name="p3" type="radio" value="A"/>
 <label for="q3_A">A</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>No estás dispuesto a que te gane, decides comprar varias prendas muy modernas y bastante caras.</td>
+<td>No estás dispuesto a que te gane, decides comprar varias prendas muy modernas y bastante
+                            caras.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q3_B" name="p3" type="radio" value="B"/>
 <label for="q3_B">B</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Admiras su estilo pero eres muy consciente del tuyo, compras la ropa que mejor te sienta y que necesitas, y pasáis un rato ameno probándoos cosas diferentes.</td>
+<td>Admiras su estilo pero eres muy consciente del tuyo, compras la ropa que mejor te sienta y
+                            que necesitas, y pasáis un rato ameno probándoos cosas diferentes.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q3_C" name="p3" type="radio" value="C"/>
 <label for="q3_C">C</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>A su lado te sientes bastante poca cosa, te quita las ganas de probarte nada y mucho menos de comprar. Pones una excusa y te marchas.</td>
+<td>A su lado te sientes bastante poca cosa, te quita las ganas de probarte nada y mucho menos
+                            de comprar. Pones una excusa y te marchas.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q3_D" name="p3" type="radio" value="D"/>
 <label for="q3_D">D</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
 <td rowspan="5" style="width:40px; text-align:center;">4</td>
-<td colspan="2" style="background:#d9d9d9;">Un día conoces a alguien nuevo y muy interesante, estáis charlando animadamente y llega el momento de hablar de ti, ¿cuál de las siguientes opciones mejor se ajusta a lo que cuentas?</td>
+<td colspan="2" style="background:#d9d9d9;">Un día conoces a alguien nuevo y muy interesante,
+                            estáis charlando animadamente y llega el momento de hablar de ti, ¿cuál de las siguientes
+                            opciones mejor se ajusta a lo que cuentas?</td>
 </tr>
 <tr>
-<td>No crees que tengas mucho que contar, tu trabajo es muy corriente, tus amigos son normales y tus aficiones también. Prefieres que esta persona te cuente su vida.</td>
+<td>No crees que tengas mucho que contar, tu trabajo es muy corriente, tus amigos son normales y
+                            tus aficiones también. Prefieres que esta persona te cuente su vida.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input checked="" id="q4_A" name="p4" type="radio" value="A"/>
 <label for="q4_A">A</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Tu trabajo te gusta y aunque sea corriente, siempre lo enfocas desde una perspectiva interesante, tus aficiones son tu pasión y disfrutas hablando de ellas, también hablas de tus proyectos futuros.</td>
+<td>Tu trabajo te gusta y aunque sea corriente, siempre lo enfocas desde una perspectiva
+                            interesante, tus aficiones son tu pasión y disfrutas hablando de ellas, también hablas de
+                            tus proyectos futuros.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q4_B" name="p4" type="radio" value="B"/>
 <label for="q4_B">B</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Hablas en líneas generales de tu trabajo y de tus aficiones, sobre todo hablas de tus amigos y de lo más interesante de sus vidas.</td>
+<td>Hablas en líneas generales de tu trabajo y de tus aficiones, sobre todo hablas de tus amigos
+                            y de lo más interesante de sus vidas.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q4_C" name="p4" type="radio" value="C"/>
 <label for="q4_C">C</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Más que de tu trabajo actual, hablas de tus proyectos y de tus objetivos, y de lo que vas a hacer para logrados, de lo buenas que son tus amistades y lo poco usual de tus aficiones. Te gusta hablar de ti.</td>
+<td>Más que de tu trabajo actual, hablas de tus proyectos y de tus objetivos, y de lo que vas a
+                            hacer para logrados, de lo buenas que son tus amistades y lo poco usual de tus aficiones. Te
+                            gusta hablar de ti.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q4_D" name="p4" type="radio" value="D"/>
 <label for="q4_D">D</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
 <td rowspan="5" style="width:40px; text-align:center;">5</td>
-<td colspan="2" style="background:#d9d9d9;">En tu lugar de trabajo o de estudios, se está explicando algo que es completamente nuevo para ti. Llega un momento en que te das cuenta que no has entendido casi nada ¿Qué haces?</td>
+<td colspan="2" style="background:#d9d9d9;">En tu lugar de trabajo o de estudios, se está
+                            explicando algo que es completamente nuevo para ti. Llega un momento en que te das cuenta
+                            que no has entendido casi nada ¿Qué haces?</td>
 </tr>
 <tr>
-<td>Paras la explicación y requieres que se empiece de nuevo, si tu no lo entiendes habrá mucha gente que tampoco lo haga.</td>
+<td>Paras la explicación y requieres que se empiece de nuevo, si tu no lo entiendes habrá mucha
+                            gente que tampoco lo haga.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input checked="" id="q5_A" name="p5" type="radio" value="A"/>
 <label for="q5_A">A</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Si hay más gente que pregunte tu también lo haces, si no, buscas en un aparte al ponente para que te aclare las dudas.</td>
+<td>Si hay más gente que pregunte tu también lo haces, si no, buscas en un aparte al ponente
+                            para que te aclare las dudas.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q5_B" name="p5" type="radio" value="B"/>
 <label for="q5_B">B</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Te da mucha vergüenza preguntar y demostrar así que no entiendes. Más tarde preguntarás a algún amigo o intentarás informarte por tu cuenta.</td>
+<td>Te da mucha vergüenza preguntar y demostrar así que no entiendes. Más tarde preguntarás a
+                            algún amigo o intentarás informarte por tu cuenta.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q5_C" name="p5" type="radio" value="C"/>
 <label for="q5_C">C</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Tomas nota de lo que no entiendes para preguntarlo al finalizar la charla, si sigues con dudas pedirás información complementaria para prepararte mejor.</td>
+<td>Tomas nota de lo que no entiendes para preguntarlo al finalizar la charla, si sigues con
+                            dudas pedirás información complementaria para prepararte mejor.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q5_D" name="p5" type="radio" value="D"/>
 <label for="q5_D">D</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
 <td rowspan="5" style="width:40px; text-align:center;">6</td>
-<td colspan="2" style="background:#d9d9d9;">Tener un trabajo bien remunerado y que nos guste es algo difícil de conseguir, si tuvieras que valorar tu empleo o tu situación laboral, ¿cómo la definirías?</td>
+<td colspan="2" style="background:#d9d9d9;">Tener un trabajo bien remunerado y que nos guste es
+                            algo difícil de conseguir, si tuvieras que valorar tu empleo o tu situación laboral, ¿cómo
+                            la definirías?</td>
 </tr>
 <tr>
-<td>Satisfactoria, tratas de buscar el lado positivo de las cosas y nunca te faltan proyectos y objetivos que perseguir.</td>
+<td>Satisfactoria, tratas de buscar el lado positivo de las cosas y nunca te faltan proyectos y
+                            objetivos que perseguir.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input checked="" id="q6_A" name="p6" type="radio" value="A"/>
 <label for="q6_A">A</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Horrible, no obstante, sabes que las cosas están mal y que tienes que aguantar lo que sea. Estás muy agradecido por tener trabajo.</td>
+<td>Horrible, no obstante, sabes que las cosas están mal y que tienes que aguantar lo que sea.
+                            Estás muy agradecido por tener trabajo.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q6_B" name="p6" type="radio" value="B"/>
 <label for="q6_B">B</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>No te preocupa especialmente el tema, tienes un montón de proyectos más importantes y con tu valía los alcanzarás.</td>
+<td>No te preocupa especialmente el tema, tienes un montón de proyectos más importantes y con tu
+                            valía los alcanzarás.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q6_C" name="p6" type="radio" value="C"/>
 <label for="q6_C">C</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Has logrado que no te afecte, consideras más importante tu vida personal y privada y eso es por lo que luchas.</td>
+<td>Has logrado que no te afecte, consideras más importante tu vida personal y privada y eso es
+                            por lo que luchas.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q6_D" name="p6" type="radio" value="D"/>
 <label for="q6_D">D</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
 <td rowspan="5" style="width:40px; text-align:center;">7</td>
-<td colspan="2" style="background:#d9d9d9;">Has tenido un día duro, has trabajado con más ahínco para finalizar una tarea en la oficina, has hecho todas las gestiones que tenías pendientes, has resuelto un par de problemas domésticos y encima le has hecho un favor a un amigo. ¿Qué haces al llegar a casa?</td>
+<td colspan="2" style="background:#d9d9d9;">Has tenido un día duro, has trabajado con más ahínco
+                            para finalizar una tarea en la oficina, has hecho todas las gestiones que tenías pendientes,
+                            has resuelto un par de problemas domésticos y encima le has hecho un favor a un amigo. ¿Qué
+                            haces al llegar a casa?</td>
 </tr>
 <tr>
-<td>Prefieres no pensarlo, el día ha sido duro pero para ti no es algo nuevo, solo pides poder dormir bien y que mañana sea un día más tranquilo.</td>
+<td>Prefieres no pensarlo, el día ha sido duro pero para ti no es algo nuevo, solo pides poder
+                            dormir bien y que mañana sea un día más tranquilo.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input checked="" id="q7_A" name="p7" type="radio" value="A"/>
 <label for="q7_A">A</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Se lo cuentas a todo el mundo, te gusta que se te reconozca cuando haces las cosas bien y exiges en casa que te mimen por haberte esforzado tanto.</td>
+<td>Se lo cuentas a todo el mundo, te gusta que se te reconozca cuando haces las cosas bien y
+                            exiges en casa que te mimen por haberte esforzado tanto.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q7_B" name="p7" type="radio" value="B"/>
 <label for="q7_B">B</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Estás muy satisfecho y decides darte un capricho, darte un baño de espuma y ver una buena película, o comprarte un regalito que hace tiempo querías.</td>
+<td>Estás muy satisfecho y decides darte un capricho, darte un baño de espuma y ver una buena
+                            película, o comprarte un regalito que hace tiempo querías.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q7_C" name="p7" type="radio" value="C"/>
 <label for="q7_C">C</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Te preocupa que se te haya olvidado algo o haber hecho algo mal por la prisa, repasas mentalmente las actividades y al día siguiente esperas no tener queja de nadie.</td>
+<td>Te preocupa que se te haya olvidado algo o haber hecho algo mal por la prisa, repasas
+                            mentalmente las actividades y al día siguiente esperas no tener queja de nadie.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q7_D" name="p7" type="radio" value="D"/>
 <label for="q7_D">D</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
 <td rowspan="5" style="width:40px; text-align:center;">8</td>
-<td colspan="2" style="background:#d9d9d9;">En tu trabajo están buscando a una persona que represente a la empresa en un concurso del ramo. Piden una persona que cumpla unos requisitos, entre ellos, explicar bien vuestro trabajo y que haga una demostración práctica del mismo.</td>
+<td colspan="2" style="background:#d9d9d9;">En tu trabajo están buscando a una persona que
+                            represente a la empresa en un concurso del ramo. Piden una persona que cumpla unos
+                            requisitos, entre ellos, explicar bien vuestro trabajo y que haga una demostración práctica
+                            del mismo.</td>
 </tr>
 <tr>
-<td>No te planteas ser voluntario, hay mil personas más capacitadas que tú para la demostración y no se te da bien hablar en público.</td>
+<td>No te planteas ser voluntario, hay mil personas más capacitadas que tú para la demostración
+                            y no se te da bien hablar en público.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input checked="" id="q8_A" name="p8" type="radio" value="A"/>
 <label for="q8_A">A</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Te presentas voluntario, puede ser una experiencia interesante y si sales elegido puedes hacer una presentación innovadora.</td>
+<td>Te presentas voluntario, puede ser una experiencia interesante y si sales elegido puedes
+                            hacer una presentación innovadora.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q8_B" name="p8" type="radio" value="B"/>
 <label for="q8_B">B</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>No te presentas, serías capaz de hacerla bien pero crees que hay gente mejor preparada y más original que tú.</td>
+<td>No te presentas, serías capaz de hacerla bien pero crees que hay gente mejor preparada y más
+                            original que tú.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q8_C" name="p8" type="radio" value="C"/>
 <label for="q8_C">C</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Te presentas y estás casi seguro de que te elegirán, haces buenos proyectos y darás una buena imagen de la empresa.</td>
+<td>Te presentas y estás casi seguro de que te elegirán, haces buenos proyectos y darás una
+                            buena imagen de la empresa.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q8_D" name="p8" type="radio" value="D"/>
 <label for="q8_D">D</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
 <td rowspan="5" style="width:40px; text-align:center;">9</td>
-<td colspan="2" style="background:#d9d9d9;">¿Con cuál de las siguientes frases sobre la buena fortuna estás más de acuerdo?</td>
+<td colspan="2" style="background:#d9d9d9;">¿Con cuál de las siguientes frases sobre la buena
+                            fortuna estás más de acuerdo?</td>
 </tr>
 <tr>
-<td>La buena suerte puede tocarle a todo el mundo, yo me considero una persona afortunada a la que la vida le sonríe.</td>
+<td>La buena suerte puede tocarle a todo el mundo, yo me considero una persona afortunada a la
+                            que la vida le sonríe.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input checked="" id="q9_A" name="p9" type="radio" value="A"/>
 <label for="q9_A">A</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Para tener buena suerte hay que trabajar duro, sólo los muy afortunados la tienen sin apenas esfuerzo.</td>
+<td>Para tener buena suerte hay que trabajar duro, sólo los muy afortunados la tienen sin apenas
+                            esfuerzo.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q9_B" name="p9" type="radio" value="B"/>
 <label for="q9_B">B</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Yo no tengo suerte, tanto los premios como las cosas especia les sólo les pasan a los demás.</td>
+<td>Yo no tengo suerte, tanto los premios como las cosas especia les sólo les pasan a los demás.
+                        </td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q9_C" name="p9" type="radio" value="C"/>
 <label for="q9_C">C</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>La suerte respecto a los premios es una cuestión de probabilidad, y respecto a las cosas de la vida, siempre depende de cómo se perciban.</td>
+<td>La suerte respecto a los premios es una cuestión de probabilidad, y respecto a las cosas de
+                            la vida, siempre depende de cómo se perciban.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q9_D" name="p9" type="radio" value="D"/>
 <label for="q9_D">D</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
 <td rowspan="5" style="width:40px; text-align:center;">10</td>
-<td colspan="2" style="background:#d9d9d9;">En una fiesta en La que no conoces a nadie excepto a Los anfitriones, te presentan a un grupo de personas de aspecto interesante. ¿Cuál es tu actitud?</td>
+<td colspan="2" style="background:#d9d9d9;">En una fiesta en La que no conoces a nadie excepto a
+                            Los anfitriones, te presentan a un grupo de personas de aspecto interesante. ¿Cuál es tu
+                            actitud?</td>
 </tr>
 <tr>
-<td>Te interesa conocerlos no sólo para pasar un buen rato en la reunión sino porque puede ser una forma de iniciar una amistad.</td>
+<td>Te interesa conocerlos no sólo para pasar un buen rato en la reunión sino porque puede ser
+                            una forma de iniciar una amistad.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input checked="" id="q10_A" name="p10" type="radio" value="A"/>
 <label for="q10_A">A</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
 <td>Esperas causarles una buena impresión y decir cosas que les puedan interesar.</td>
@@ -1692,32 +1826,33 @@
 <div class="button-style">
 <input id="q10_B" name="p10" type="radio" value="B"/>
 <label for="q10_B">B</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Te gustaría llevarles a tu terreno en la conversación para así poder hablar de los temas que más te interesan.</td>
+<td>Te gustaría llevarles a tu terreno en la conversación para así poder hablar de los temas que
+                            más te interesan.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q10_C" name="p10" type="radio" value="C"/>
 <label for="q10_C">C</label>
-</div></td>
+</div>
+</td>
 </tr>
 <tr>
-<td>Antes de iniciar una conversación escuchas lo que dicen, y es peras para hablar a que lo hagan de temas que tú conozcas.</td>
+<td>Antes de iniciar una conversación escuchas lo que dicen, y es peras para hablar a que lo
+                            hagan de temas que tú conozcas.</td>
 <td style="width:60px; text-align:center;">
 <div class="button-style">
 <input id="q10_D" name="p10" type="radio" value="D"/>
 <label for="q10_D">D</label>
-</div></td>
+</div>
+</td>
 </tr>
 </table></div>
-
-<!-- <a class="back-button" href="index.html" style="display: block; text-align: center; margin-top: 20px;">Volver al inicio</a> -->
 </div>
 <div class="formulario" id="form3">
 <h3>Formulario 3 (Próximamente)</h3>
-
-<!-- <a class="back-button" href="index.html" style="display: block; text-align: center; margin-top: 20px;">Volver al inicio</a> -->
 </div>
 </div>
 <a class="back-button" href="index.html">Volver al inicio</a>
@@ -1728,6 +1863,7 @@
                 .forEach((el) => (el.style.display = "none"));
             document.getElementById(id).style.display = "block";
         }
+
 
         function mostrarSubtab(id, el) {
             document.querySelectorAll('.subtab-content').forEach(div => div.style.display = "none");
