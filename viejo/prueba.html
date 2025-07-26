@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style3.css" rel="stylesheet" />
+  <title>Estilos de RadioButtons</title>
+  <style>
+    .formulario {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .subtablink {
+      padding: 8px 12px;
+      margin: 2px;
+      background-color: #ddd;
+      border: none;
+      cursor: pointer;
+    }
+
+    .subtablink.active {
+      background-color: #555;
+      color: white;
+    }
+
+    .subtablink {
+      padding: 8px 12px;
+      font-size: 0.85rem;
+    }
+
+    @media screen and (max-width: 768px) {
+
+      .subtablink {
+        font-size: 0.75rem;
+        padding: 6px 10px;
+      }
+
+    }
+
+    @media screen and (max-width: 768px) {
+      .header-title {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 5px;
+      }
+
+      .subheader {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      .botonera {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .botonera button {
+        width: 90%;
+        font-size: 1.2rem;
+        padding: 3px 10px;
+      }
+
+      .formulario h3,
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      .back-button {
+        display: block;
+        width: 50%;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.2rem;
+      }
+    }
+
+    /*********************** RadioButtons *****************************/
+    body {
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 30px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    /* Estilo clásico */
+    .classic input[type="radio"] {
+      margin-right: 8px;
+      transform: scale(1.2);
+    }
+
+    /* Estilo personalizado con etiquetas */
+    .custom-label input[type="radio"] {
+      display: none;
+    }
+
+    .custom-label label {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 30px;
+      border: 2px solid #007bff;
+      color: #007bff;
+      background-color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .custom-label input[type="radio"]:checked+label {
+      background-color: #007bff;
+      color: white;
+    }
+
+    /* Estilo botón */
+    .button-style input[type="radio"] {
+      display: none;
+    }
+
+    .button-style label {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 5px;
+      border: none;
+      background-color: #e0e0e0;
+      color: #333;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button-style input[type="radio"]:checked+label {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    /* Estilo con íconos */
+    .icon-style input[type="radio"] {
+      display: none;
+    }
+
+    .icon-style label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #fff;
+      padding: 10px 20px;
+      margin: 5px;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .icon-style input[type="radio"]:checked+label {
+      border-color: #ff9800;
+      background-color: #fff3e0;
+    }
+
+    .icon-style label i {
+      font-style: normal;
+      font-size: 18px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      label {
+        font-size: 1rem;
+        padding: 10px;
+      }
+    }
+
+    /*********************** Inputs DATE *****************************/
+    body {
+      line-height: 1.5;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input[type="date"] {
+      width: 100%;
+      max-width: 300px;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    /* Estilo oscuro */
+    .dark input[type="date"] {
+      background-color: #333;
+      color: white;
+      border: 1px solid #555;
+    }
+
+    .dark input[type="date"]:focus {
+      border-color: #ff9800;
+      outline: none;
+    }
+
+    /* Estilo con sombra */
+    .shadow input[type="date"] {
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      border: none;
+    }
+
+    /* Estilo de borde inferior solamente */
+    .underline input[type="date"] {
+      border: none;
+      border-bottom: 2px solid #3f51b5;
+      border-radius: 0;
+    }
+
+    .underline input[type="date"]:focus {
+      border-bottom-color: #ff4081;
+      outline: none;
+    }
+
+    /* Estilo colorido */
+    .colorful input[type="date"] {
+      background-color: #e1f5fe;
+      border: 2px solid #03a9f4;
+      color: #01579b;
+    }
+
+    .colorful input[type="date"]:focus {
+      border-color: #0288d1;
+      background-color: #b3e5fc;
+      outline: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      input[type="date"] {
+        font-size: 1rem;
+        padding: 10px;
+      }
+    }
+
+    .date-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 30px;
+    }
+
+    .date-wrapper input[type="date"] {
+      width: 100%;
+      padding: 12px 40px 12px 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .calendar-icon {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: #555;
+      pointer-events: none;
+      /* para que el clic atraviese hacia el input */
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .calendar-icon {
+        font-size: 1.4rem;
+      }
+    }
+
+    /*********************** Inputs *****************************/
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .input-section {
+      margin-bottom: 40px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      max-width: 350px;
+      padding: 12px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
+    }
+
+    /* Estilo clásico */
+    .classic input {
+      border: 1px solid #ccc;
+      background-color: white;
+    }
+
+    .classic input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    /* Estilo subrayado */
+    .underline input {
+      border: none;
+      border-bottom: 2px solid #3f51b5;
+      border-radius: 0;
+      background-color: transparent;
+    }
+
+    .underline input:focus {
+      border-bottom-color: #ff4081;
+      outline: none;
+    }
+
+    /* Estilo con sombra */
+    .shadow input {
+      border: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      background-color: white;
+    }
+
+    .shadow input:focus {
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+      outline: none;
+    }
+
+    /* Estilo oscuro */
+    .dark input {
+      background-color: #333;
+      color: white;
+      border: 1px solid #555;
+    }
+
+    .dark input::placeholder {
+      color: #bbb;
+    }
+
+    .dark input:focus {
+      border-color: #ff9800;
+      outline: none;
+    }
+
+    /* Estilo colorido y redondeado */
+    .colorful input {
+      background-color: #e1f5fe;
+      border: 2px solid #03a9f4;
+      color: #01579b;
+      border-radius: 30px;
+    }
+
+    .colorful input:focus {
+      border-color: #0288d1;
+      background-color: #b3e5fc;
+      outline: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+
+      input {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="subtab-nav">
+    <button class="subtablink" onclick="mostrarSubtab('RadioButtons', this)" type="button">Estilos de
+      RadioButtons</button>
+    <button class="subtablink" onclick="mostrarSubtab('Inputs_DATE', this)" type="button">Estilos de
+      Calendario</button>
+    <button class="subtablink" onclick="mostrarSubtab('Inputs', this)" type="button">Inputs</button>
+  </div>
+
+  <div class="formulario" id="form1" style="display: block">
+    <div class="subtab-content" id="RadioButtons" style="display: block">
+      <h1>Estilos de RadioButtons</h1>
+
+      <div class="section classic">
+        <h2>1. Estilo clásico</h2>
+        <label><input type="radio" name="classic" checked> Opción 1</label>
+        <label><input type="radio" name="classic"> Opción 2</label>
+      </div>
+
+      <div class="section custom-label">
+        <h2>2. Etiquetas personalizadas</h2>
+        <input type="radio" id="custom1" name="custom" checked>
+        <label for="custom1">Personal 1</label>
+
+        <input type="radio" id="custom2" name="custom">
+        <label for="custom2">Personal 2</label>
+      </div>
+
+      <div class="section button-style">
+        <h2>3. Estilo botón</h2>
+        <input type="radio" id="btn1" name="button" checked>
+        <label for="btn1">Botón 1</label>
+
+        <input type="radio" id="btn2" name="button">
+        <label for="btn2">Botón 2</label>
+      </div>
+
+      <div class="section icon-style">
+        <h2>4. Con íconos (usando texto emoji)</h2>
+        <input type="radio" id="icon1" name="icon" checked>
+        <label for="icon1"><i>📱</i> Móvil</label>
+
+        <input type="radio" id="icon2" name="icon">
+        <label for="icon2"><i>💻</i> Laptop</label>
+      </div>
+    </div>
+    <div class="subtab-content" id="Inputs_DATE" style="display: block">
+      <h1>Estilos personalizados para Inputs de Fecha</h1>
+
+      <div class="section default">
+        <label for="fecha-default">Estilo clásico</label>
+        <input type="date" id="fecha-default" name="fecha-default">
+      </div>
+
+      <div class="section dark">
+        <label for="fecha-dark">Estilo oscuro</label>
+        <input type="date" id="fecha-dark" name="fecha-dark">
+      </div>
+
+      <div class="section shadow">
+        <label for="fecha-shadow">Con sombra</label>
+        <input type="date" id="fecha-shadow" name="fecha-shadow">
+      </div>
+
+      <div class="section underline">
+        <label for="fecha-underline">Borde inferior</label>
+        <input type="date" id="fecha-underline" name="fecha-underline">
+      </div>
+
+      <div class="section colorful">
+        <label for="fecha-color">Estilo colorido</label>
+        <input type="date" id="fecha-color" name="fecha-color">
+      </div>
+      <br><br><br>
+      <!-- ******************************************************************** -->
+
+      <h2>Input Date con ícono personalizado</h2>
+
+      <div class="date-wrapper">
+        <input type="date" id="fecha" name="fecha">
+        <span class="calendar-icon">📅</span>
+      </div>
+    </div>
+    <div class="subtab-content" id="Inputs" style="display: block">
+      <h1>Estilos de Inputs Responsivos</h1>
+
+      <div class="input-section classic">
+        <label for="input1">Clásico</label>
+        <input type="text" id="input1" placeholder="Tu nombre">
+      </div>
+
+      <div class="input-section underline">
+        <label for="input2">Subrayado</label>
+        <input type="email" id="input2" placeholder="Correo electrónico">
+      </div>
+
+      <div class="input-section shadow">
+        <label for="input3">Con sombra</label>
+        <input type="text" id="input3" placeholder="Usuario">
+      </div>
+
+      <div class="input-section dark">
+        <label for="input4">Estilo oscuro</label>
+        <input type="password" id="input4" placeholder="Contraseña">
+      </div>
+
+      <div class="input-section colorful">
+        <label for="input5">Colorido</label>
+        <input type="text" id="input5" placeholder="Teléfono o info extra">
+      </div>
+    </div>
+  </div>
+
+  <a class="back-button" href="index.html">Volver al inicio</a>
+
+  <script>
+    function mostrarFormulario2(id) {
+      document
+        .querySelectorAll(".formulario")
+        .forEach((el) => (el.style.display = "none"));
+      document.getElementById(id).style.display = "block";
+    }
+
+
+    function mostrarSubtab(id, el) {
+      document.querySelectorAll('.subtab-content').forEach(div => div.style.display = "none");
+      document.querySelectorAll('.subtablink').forEach(btn => btn.classList.remove("active"));
+      document.getElementById(id).style.display = "block";
+      el.classList.add("active");
+    }
+
+    window.onload = function () {
+      mostrarFormulario2('form1');
+      const firstSubtab = document.querySelector('.subtablink');
+      if (firstSubtab) {
+        mostrarSubtab('RadioButtons', firstSubtab);
+      }
+    };
+  </script>
+</body>
+
+</html>

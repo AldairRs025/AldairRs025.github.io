@@ -1,0 +1,2312 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ingeniería Industrial - Tutorías</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/2023-04-20_16-10-48_TESOEM.png" type="img/2023-04-20_16-10-48_TESOEM.png" />
+    <link rel="stylesheet" href="style3.css">
+    <style>
+        :root {
+            --red: #8a1538;
+        }
+
+        .formulario {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .botonera button {
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: var(--red);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .botonera button:hover {
+            background-color: #a3203b;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 3px;
+            font-size: 1.2rem;
+        }
+
+        table input,
+        table select {
+            padding: 5px;
+            font-size: 0.9rem;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                padding: 10px;
+            }
+
+            td {
+                display: flex;
+                justify-content: space-between;
+                padding: 5px;
+            }
+
+            td::before {
+                content: attr(data-label);
+                font-weight: bold;
+            }
+
+            td:first-child {
+                font-weight: bold;
+            }
+        }
+
+        .container {
+            padding: 10px;
+        }
+
+        .formulario label {
+            font-size: 1rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            font-size: 1.2rem;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .header-title {
+                font-size: 0.9rem;
+                text-align: center;
+                padding: 5px;
+            }
+
+            .subheader {
+                font-size: 1.2rem;
+                text-align: center;
+            }
+
+            .botonera {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .botonera button {
+                width: 90%;
+                font-size: 1.2rem;
+                padding: 3px 10px;
+            }
+
+            .formulario h3,
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .back-button {
+                display: block;
+                width: 50%;
+                text-align: center;
+                margin-top: 20px;
+                font-size: 1.2rem;
+            }
+        }
+
+        .subtab-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .subtablink {
+            padding: 8px 12px;
+            margin: 2px;
+            background-color: #ddd;
+            border: none;
+            cursor: pointer;
+        }
+
+        .subtablink.active {
+            background-color: #555;
+            color: white;
+        }
+
+        .subtab-content {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            font-size: 1.2rem;
+            padding: 6px;
+            margin-top: 4px;
+        }
+
+        form {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            font-size: 1.2rem;
+            padding: 4px;
+            margin-top: 3px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            font-size: 1.2rem;
+            padding: 2px 4px;
+            margin-top: 2px;
+            line-height: 1;
+        }
+
+        form {
+            width: 1200px;
+            margin: auto;
+        }
+
+        /*Tammaño de txt contenido inputs*/
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            font-size: 1.1em !important;
+            padding: 2px 4px !important;
+            margin-top: 2px !important;
+            line-height: 1.1;
+        }
+
+        form {
+            max-width: 1400px !important;
+            margin: auto;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container,
+        form {
+            padding: 10px;
+            margin: auto;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            font-size: 0.9rem;
+            padding: 6px 8px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            font-size: 1rem;
+            border-collapse: collapse;
+        }
+
+        table input,
+        table select {
+            font-size: 0.85rem;
+            padding: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        th,
+        td {
+            padding: 4px;
+            text-align: left;
+        }
+
+        .tab-nav,
+        .subtab-nav {
+            flex-wrap: wrap;
+            gap: 4px;
+            margin: 10px 0;
+            justify-content: center;
+        }
+
+        /*Tammaño de txt pestañas*/
+        .tablink,
+        .subtablink {
+            padding: 8px 12px;
+            font-size: 1rem;
+        }
+
+        /***************************** Estilo RADIO *****************************/
+        .button-style input[type="radio"] {
+            display: none;
+        }
+
+        .button-style label {
+            display: inline-block;
+            padding: 12px 17px;
+            margin: 5px;
+            border: none;
+            background-color: #e0e0e0;
+            color: #333;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-style input[type="radio"]:checked+label {
+            background-color: var(--red);
+            color: white;
+        }
+
+        @media screen and (max-width: 768px) {
+
+            h1,
+            h3,
+            h3 {
+                font-size: 1rem;
+            }
+
+            label {
+                font-size: 0.75rem;
+            }
+
+            .tablink,
+            .subtablink {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+
+            table {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Tabla responsive en móviles */
+        @media screen and (max-width: 768px) {
+
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                padding: 10px;
+            }
+
+            td {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 6px 10px;
+                font-size: 0.85rem;
+            }
+
+            td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                width: 45%;
+                flex-shrink: 0;
+            }
+
+            input,
+            select,
+            textarea {
+                width: 100%;
+                font-size: 0.9rem;
+            }
+        }
+
+        /*********************** Inputs DATE *****************************/
+
+        /* Estilo de borde inferior solamente */
+        .underline input[type="date"] {
+            border: none;
+            border-bottom: 2px solid #4bb53f;
+            border-radius: 0;
+        }
+
+        .underline input[type="date"]:focus {
+            border-bottom-color: #ff4081;
+            outline: none;
+        }
+
+        /*********************** Inputs *****************************/
+
+        @media screen and (max-width: 768px) {
+
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
+                width: 100%;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                background-color: #f9f9f9;
+            }
+
+            td {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 10px;
+                font-size: 0.9rem;
+                border-bottom: 1px solid #eaeaea;
+            }
+
+            td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                flex: 1 1 50%;
+                padding-right: 10px;
+            }
+
+            td:last-child {
+                border-bottom: none;
+            }
+
+            table input,
+            table select {
+                width: 100%;
+                font-size: 1rem;
+            }
+        }
+
+
+
+
+        @media screen and (max-width: 768px) {
+
+            /* Mostrar nuevamente el contenido del Formulario 2 y convertirlo a formato vertical */
+            #form2 table,
+            #form2 thead,
+            #form2 tbody,
+            #form2 tr,
+            #form2 td,
+            #form2 th {
+                display: block !important;
+                width: 100%;
+            }
+
+            #form2 thead {
+                display: none !important;
+            }
+
+            #form2 tr {
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                background-color: #f9f9f9;
+                border-radius: 8px;
+            }
+
+            #form2 td {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 10px;
+                font-size: 0.9rem;
+                border-bottom: 1px solid #eaeaea;
+                box-sizing: border-box;
+            }
+
+            #form2 td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                flex: 1 1 48%;
+                padding-right: 10px;
+            }
+
+            #form2 td:last-child {
+                border-bottom: none;
+            }
+
+            /* Asegurar inputs y selects usen 100% de ancho */
+            #form2 table input,
+            #form2 table select {
+                width: 100%;
+                font-size: 1rem;
+            }
+        }
+
+
+        /* === Formulario 2: quitar tabla en móviles y mostrar contenido de forma vertical === */
+        @media screen and (max-width: 768px) {
+
+            #form2 table,
+            #form2 thead {
+                display: none !important;
+                /* Oculta tabla y encabezados */
+            }
+
+            #form2 .mobile-qblock {
+                display: block;
+                margin-bottom: 20px;
+                background: #f9f9f9;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            }
+
+            #form2 .mobile-qblock p {
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            #form2 .mobile-qblock label {
+                display: block;
+                margin: 5px 0;
+                font-weight: normal;
+            }
+
+            #form2 .mobile-qblock .button-style {
+                margin-top: 10px;
+            }
+        }
+
+        /* Oculta bloques móviles en escritorio */
+        @media screen and (min-width: 769px) {
+            #form2 .mobile-qblock {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <div class="divider"></div>
+    <div class="header">
+        <img src="img/logo.svg" alt="Logo Estado de México">
+        <div class="header-title">Tecnológico de Estudios Superiores del Oriente del Estado de México</div>
+    </div>
+    <div class="divider"></div>
+    <div class="subheader">Ingeniería Industrial</div>
+    <!-- <div class="navbar">
+        <a href="contador.html">Contador Público</a>
+        <a href="gastronomia.html">Gastronomía</a>
+        <a href="ambiental.html">Ingeniería Ambiental</a>
+        <a href="admin.html">Ingeniería en Administración</a>
+        <a href="sistemas.html">Ingeniería en Sistemas Computacionales</a>
+        <a href="tic.html">Ingeniería en Tecnologías de la Información y Comunicaciones</a>
+        <a href="renovables.html">Ingeniería en Energías Renovables</a>
+        <a href="industrial.html">Ingeniería Industrial</a>
+        <a href="automotriz.html">Ingeniería en Sistemas Automotrices</a>
+        <a href="maestria.html">Maestría en Ingeniería Industrial</a>
+    </div> -->
+    <div class="container">
+        <div class="item">
+            <div class="circle">
+                <img src="img/Ingeniería Industrial.jpg" style="width: 60px; height: 60px; object-fit: contain;" alt="Contador Público" style="width: 100px; height: 100px; object-fit: contain;">
+            </div>
+            <div class="label">Ingeniería Industrial</div>
+        </div>
+        <p style="text-align: center; max-width: 600px;">
+            Bienvenido a la sección de tutorías para la carrera de <strong>Ingeniería Industrial</strong>. Aquí encontrarás información relevante, documentos, enlaces y recursos de apoyo académico.
+        </p>
+        <div class="botonera" style="text-align: center">
+            <button onclick="mostrarFormulario('form1')">Formulario 1</button>
+            <button onclick="mostrarFormulario('form2')">Formulario 2</button>
+            <!-- <button onclick="mostrarFormulario('form3')">Formulario 3</button> -->
+        </div>
+        <div class="formulario" id="form1" style="display: block">
+            <h3>Formulario 1</h3>
+            <form action="BD/contador.php" method="POST">
+                <div class="subtab-nav">
+                    <button class="subtablink" onclick="mostrarSubtab('datos_personales', this)" type="button">Datos
+                        Personales</button>
+                    <button class="subtablink" onclick="mostrarSubtab('datos_familiares', this)" type="button">Datos
+                        Familiares</button>
+                    <button class="subtablink" onclick="mostrarSubtab('datos_academicos', this)" type="button">Datos
+                        Académicos</button>
+                    <button class="subtablink" onclick="mostrarSubtab('datos_medicos', this)" type="button">Datos
+                        Medicos</button>
+                    <button class="subtablink" onclick="mostrarSubtab('caracteristicas_personales', this)"
+                        type="button">Caract. Personales</button>
+                </div>
+                <div class="subtab-content" id="datos_personales" style="display: block">
+                    <h3>ESTADO DEL ALUMNO.</h3>
+                    <label>Nombre: <input name="nombre" type="text" value="Aldair" /></label><label>Estatura: <input
+                            name="estatura" type="text" value="1.60" /></label><label>Carrera: <input name="carrera"
+                            type="text" value="Ingeniería Industrial" /></label><label>Peso: <input name="peso" type="text"
+                            value="56" /></label>
+                    <div class="underline">
+                        <label for="fecha_nacimiento">Fecha de Nacimiento: </label>
+                        <input id="fecha_nacimiento" name="fecha_nacimiento" type="date" value="2002-04-22" />
+                    </div>
+                    <label>Sexo:</label>
+                    <div class="button-style">
+                        <input checked="" id="btn1" name="sexo" type="radio" value="Masculino" />
+                        <label for="btn1">Masculino</label>
+                        <input id="btn2" name="sexo" type="radio" value="Femenino" />
+                        <label for="btn2">Femenino</label>
+                    </div>
+                    <label>Edad: <input name="edad" type="number" value="23" /></label><label>Estado civil:</label>
+                    <select id="EstadoCivil" name="estado_civil">
+                        <!-- <option disabled select>Seleccionar</option> -->
+                        <option value="">Seleccionar</option>
+                        <option value="Casado">Casado</option>
+                        <option value="Casado">Soltero</option>
+                    </select><label>¿Trabaja?:</label>
+                    <div class="button-style">
+                        <input checked="" id="btn3" name="trabaja" type="radio" value="Si" />
+                        <label for="btn3">Si</label>
+                        <input id="btn4" name="trabaja" type="radio" value="No" />
+                        <label for="btn4">No</label>
+                    </div>
+                    <label>Lugar de Nacimiento: <input name="lugar_nacimiento" type="text"
+                            value="X" /></label><label>Domicilio Actual: <input name="domicilio_actual" type="text"
+                            value="X" /></label><label>Teléfono: <input name="telefono" type="text"
+                            value="5614040411" /></label><label>Código Postal: <input name="cp" type="text"
+                            value="56613" /></label><label>Email: <input name="email" type="email"
+                            value="aldair_077ramon@hotmail.com" /></label>
+                </div>
+                <div class="subtab-content" id="datos_familiares" style="display: none">
+                    <label>Tipo de Vivienda:</label>
+                    <div class="button-style">
+                        <input checked="" id="btn5" name="vivienda" type="radio" value="Casa" />
+                        <label for="btn5">Casa</label>
+                        <input id="btn6" name="vivienda" type="radio" value="Departamento" />
+                        <label for="btn6">Departamento</label>
+                    </div>
+                    <label>¿La casa o departamento es?:</label>
+                    <div class="button-style">
+                        <input checked="" id="btn7" name="tipo" type="radio" value="Propia" />
+                        <label for="btn7">Propia</label>
+                        <input id="btn8" name="tipo" type="radio" value="Rentada" />
+                        <label for="btn8">Rentada</label>
+                        <input id="btn9" name="tipo" type="radio" value="Prestada" />
+                        <label for="btn9">Prestada</label>
+                        <input id="btn10" name="tipo" type="radio" value="Otros" />
+                        <label for="btn10">Otros</label>
+                    </div>
+                    <label>Especifique: <input name="tipo_otro" type="text" value="X" /></label>
+                    <label>Número de personas con las que vives:<input name="num_personas" type="number"
+                            value="4" /></label>
+                    <label>Parentesco: <input name="parentesco" type="text" value="X" /></label>
+                    <label>Nombre del Padre: <input name="nombre_padre" type="text" value="X" /></label>
+                    <label>Edad del Padre: <input name="edad_padre" type="number" value="52" /></label>
+                    <label>¿Trabaja el Padre?:</label>
+                    <div class="section button-style">
+                        <input checked="" id="btn17" name="trabaja_padre" type="radio" value="Si" />
+                        <label for="btn17">Si</label>
+                        <input id="btn18" name="trabaja_padre" type="radio" value="No" />
+                        <label for="btn18">No</label>
+                    </div>
+                    <label>Profesión del Padre: <input name="profesion_padre" type="text" value="X" /></label>
+                    <label>Tipo de Trabajo: <input name="tipo_trabajo_padre" type="text" value="X" /></label>
+                    <label>Domicilio: <input name="domicilio_padre" type="text" value="X" /></label>
+                    <label>Teléfono: <input name="telefono_padre" type="text" value="X" /></label>
+                    <label>Nombre de la Madre: <input name="nombre_madre" type="text" value="X" /></label>
+                    <label>Profesión de la Madre: <input name="profesion_madre" type="text" value="X" /></label>
+                    <label>Tipo de Trabajo: <input name="tipo_trabajo_madre" type="text" value="X" /></label>
+                    <label>Domicilio: <input name="domicilio_madre" type="text" value="X" /></label>
+                    <label>Teléfono: <input name="telefono_madre" type="text" value="X" /></label>
+                    <h3>Nombre de tus hermanos por edad (del mayor al menor incluyéndote tú).</h3>
+                    <div style="overflow-x:auto;">
+                        <table border="1" style="width:100%; border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th>N.º</th>
+                                    <th>Nombre</th>
+                                    <th>Fecha de Nacimiento</th>
+                                    <th>Sexo</th>
+                                    <th>Estudios</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- 10 filas editables -->
+                                <tr>
+                                    <td data-label="N.º">
+                                        <center>1</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="nombre_1" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_1" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo">
+                                        <select name="sexo_1" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select>
+                                    </td>
+                                    <td data-label="Estudios"><input name="estudios_1" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">
+                                        <center>2</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="nombre_2" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_2" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo">
+                                        <select name="sexo_2" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select>
+                                    </td>
+                                    <td data-label="Estudios"><input name="estudios_2" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">
+                                        <center>3</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="nombre_3" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_3" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo">
+                                        <select name="sexo_3" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select>
+                                    </td>
+                                    <td data-label="Estudios"><input name="estudios_3" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <!-- ... repetir hasta 10 ... -->
+                                <tr>
+                                    <td data-label="N.º">
+                                        <center>4</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="nombre_4" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_4" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo">
+                                        <select name="sexo_4" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select>
+                                    </td>
+                                    <td data-label="Estudios"><input name="estudios_4" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <!-- del 5 al 10 -->
+                                <tr>
+                                    <td data-label="N.º">
+                                        <center>5</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="nombre_5" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_5" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo"><select name="sexo_5" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select></td>
+                                    <td data-label="Estudios"><input name="estudios_5" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">
+                                        <center>6</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="nombre_6" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_6" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo"><select name="sexo_6" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select></td>
+                                    <td data-label="Estudios"><input name="estudios_6" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">
+                                        <center>7</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="nombre_7" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_7" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo"><select name="sexo_7" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select></td>
+                                    <td data-label="Estudios"><input name="estudios_7" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">
+                                        <center>8</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="nombre_8" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_8" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo"><select name="sexo_8" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select></td>
+                                    <td data-label="Estudios"><input name="estudios_8" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">
+                                        <center>9</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="nombre_9" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_9" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo"><select name="sexo_9" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select></td>
+                                    <td data-label="Estudios"><input name="estudios_9" style="width:100%" type="text" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="N.º">
+                                        <center>10</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="nombre_10" style="width:100%" type="text" />
+                                    </td>
+                                    <td data-label="Fecha de Nacimiento"><input name="fecha_10" style="width:100%"
+                                            type="date" /></td>
+                                    <td data-label="Sexo"><select name="sexo_10" style="width:100%">
+                                            <option value="">Selecciona</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                        </select></td>
+                                    <td data-label="Estudios"><input name="estudios_10" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3>Ingresos</h3><label for="ingresos_familia">¿A cuánto ascienden los ingresos mensuales de tu
+                        familia?</label><input name="ingresos_familia" style="width:100%; margin-bottom: 10px;"
+                        type="text" /><label for="ingresos_propios">En caso de ser económicamente independiente ¿a
+                        cuánto asciende tu
+                        ingreso?</label><input name="ingresos_propios" style="width:100%; margin-bottom: 20px;"
+                        type="text" />
+                    <h3>ÁREAS DE INTEGRACIÓN.</h3>
+                    <div style="overflow-x:auto;">
+                        <table border="1" style="width:100%; border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">ÁREA FAMILIAR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="ÁREA FAMILIAR">¿Cómo es la relación con tu familia?</td>
+                                    <td data-label="¿Cómo es la relación con tu familia?"><input name="relacion_familia"
+                                            style="width:100%" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="ÁREA FAMILIAR">¿Existen dificultades?</td>
+                                    <td data-label="¿Existen dificultades?"><input name="dificultades_familia"
+                                            style="width:100%" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="ÁREA FAMILIAR">¿De qué tipo?</td>
+                                    <td data-label="¿De qué tipo?"><input name="tipo_dificultades" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="ÁREA FAMILIAR">¿Qué actitud tienes con tu familia?</td>
+                                    <td data-label="¿Qué actitud tienes con tu familia?"><input name="actitud_familia"
+                                            style="width:100%" type="text" /></td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th colspan="2">EL PADRE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="ÁREA FAMILIAR">¿Cómo te relacionas con tu Padre?</td>
+                                    <td data-label="¿Cómo te relacionas con tu Padre?"><input name="relacion_padre"
+                                            style="width:100%" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="ÁREA FAMILIAR">¿Qué actitud tienes hacia tu Padre?</td>
+                                    <td data-label="¿Qué actitud tienes hacia tu Padre?"><input name="actitud_padre"
+                                            style="width:100%" type="text" /></td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th colspan="2">LA MADRE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="ÁREA FAMILIAR">¿Cómo te relacionas con tu Madre?</td>
+                                    <td data-label="¿Cómo te relacionas con tu Madre?"><input name="relacion_madre"
+                                            style="width:100%" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="ÁREA FAMILIAR">¿Qué actitud tienes hacia tu Madre?</td>
+                                    <td data-label="¿Qué actitud tienes hacia tu Madre?"><input name="actitud_madre"
+                                            style="width:100%" type="text" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3>HERMANOS: <small>(Con cada uno de ellos)</small></h3>
+                    <div style="overflow-x:auto;">
+                        <table border="1" style="width:100%; border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Nombre</th>
+                                    <th>Relación</th>
+                                    <th>Actitud</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="">
+                                        <center>1</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_1" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_1" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_1" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">
+                                        <center>2</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_2" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_2" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_2" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">
+                                        <center>3</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_3" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_3" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_3" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">
+                                        <center>4</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_4" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_4" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_4" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">
+                                        <center>5</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_5" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_5" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_5" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">
+                                        <center>6</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_6" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_6" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_6" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">
+                                        <center>7</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_7" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">
+                                        <center>8</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_7" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">
+                                        <center>9</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_7" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="">
+                                        <center>10</center>
+                                    </td>
+                                    <td data-label="Nombre"><input name="hermano_nombre_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Relación"><input name="hermano_relacion_7" style="width:100%"
+                                            type="text" /></td>
+                                    <td data-label="Actitud"><input name="hermano_actitud_7" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3>Otros aspectos del ambiente familiar.</h3>
+                    <p>¿Con quién te sientes más ligado afectivamente?</p>
+                    <div class="button-style">
+                        <input checked="" id="btn11" name="ligado_afectivamente" type="radio" value="Madre" />
+                        <label for="btn11">Madre</label>
+                        <input id="btn12" name="ligado_afectivamente" type="radio" value="Padre" />
+                        <label for="btn12">Padre</label>
+                        <input id="btn13" name="ligado_afectivamente" type="radio" value="Hermano" />
+                        <label for="btn13">Hermano</label>
+                        <input id="btn14" name="ligado_afectivamente" type="radio" value="Otros" />
+                        <label for="btn14">Otros</label>
+                    </div>
+                    <p>Especifica por qué:</p><input name="porque_ligado" style="width:100%" type="text" />
+                    <p>¿Quién se ocupa más directamente de tu educación?</p><input name="quien_educacion"
+                        style="width:100%" type="text" />
+                    <p>¿Quién ha influido más en tu decisión para estudiar esta carrera?</p><input
+                        name="quien_influye_carrera" style="width:100%" type="text" />
+                    <p>¿Consideras importante facilitar algún otro dato sobre tu ambiente familiar?</p><textarea
+                        name="otros_datos_familiares" rows="4" style="width:100%"></textarea>
+                </div>
+                <div class="subtab-content" id="datos_academicos" style="display: none">
+                    <h3>¿Dónde realizaste tus estudios?</h3>
+                    <table border="1" style="width:100%; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th>Nivel Educativo</th>
+                                <th>Nombre de la Institución</th>
+                                <th>Ubicación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Nivel Educativo">Primaria</td>
+                                <td data-label="Nombre de la Institución"><input name="primaria_nombre"
+                                        style="width:100%" type="text" /></td>
+                                <td data-label="Ubicación"><input name="primaria_ubicacion" style="width:100%"
+                                        type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Nivel Educativo">Secundaria</td>
+                                <td data-label="Nombre de la Institución"><input name="secundaria_nombre"
+                                        style="width:100%" type="text" /></td>
+                                <td data-label="Ubicación"><input name="secundaria_ubicacion" style="width:100%"
+                                        type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Nivel Educativo">Bachillerato</td>
+                                <td data-label="Nombre de la Institución"><input name="bachillerato_nombre"
+                                        style="width:100%" type="text" /></td>
+                                <td data-label="Ubicación"><input name="bachillerato_ubicacion" style="width:100%"
+                                        type="text" /></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Nivel Educativo">Estudios Superiores</td>
+                                <td data-label="Nombre de la Institución"><input name="superiores_nombre"
+                                        style="width:100%" type="text" /></td>
+                                <td data-label="Ubicación"><input name="superiores_ubicacion" style="width:100%"
+                                        type="text" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="subtab-content" id="datos_medicos" style="display: none">
+                    <h3>Prescripción médica.</h3>
+                    <p>¿Cuenta con prescripción médica de alguna deficiencia sensorial o funcional que te obligue a
+                        llevar aparatos o controlar tu actividad física?</p>
+                    <div class="button-style">
+                        <input checked="" id="btn15" name="prescripcion" type="radio" value="Sí" />
+                        <label for="btn15">Sí</label>
+                        <input id="btn16" name="prescripcion" type="radio" value="No" />
+                        <label for="btn16">No</label>
+                    </div>
+                    <p><strong>¿Indica cuáles?</strong> *Puedes seleccionar más de uno.</p>
+                    <label><input name="deficiencia" type="checkbox" value="vista" /> Vista</label><label><input
+                            name="deficiencia" type="checkbox" value="oido" /> Oído</label><label><input
+                            name="deficiencia" type="checkbox" value="lenguaje" /> Lenguaje</label><label><input
+                            name="deficiencia" type="checkbox" value="otros" /> Otros</label>
+                    <h3>ESTADO PSICOFISIOLÓGICOS.</h3>
+                    <div style="overflow-x:auto;">
+                        <table border="1" style="width:100%; border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th>INDICADORES</th>
+                                    <th>FRECUENTE/M</th>
+                                    <th>MUY FRECUENTE/M</th>
+                                    <th>NUNCA</th>
+                                    <th>ANTES</th>
+                                    <th>A VECES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="INDICADORES">Manos y/o pies hinchados</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_0" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_0" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_0" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_0" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_0" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Dolores en el vientre</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_1" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_1" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_1" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_1" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_1" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Dolores de cabeza y/o vómitos</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_2" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_2" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_2" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_2" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_2" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Pérdida del equilibrio</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_3" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_3" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_3" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_3" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_3" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Fatiga y agotamiento</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_4" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_4" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_4" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_4" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_4" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Pérdida de vista u oído</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_5" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_5" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_5" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_5" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_5" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Dificultades para dormir</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_6" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_6" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_6" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_6" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_6" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Pesadillas o terrores nocturnos a que:</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_7" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_7" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_7" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_7" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_7" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Incontinencia (orina, heces)</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_8" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_8" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_8" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_8" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_8" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Tartamudeos al explicarse</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_9" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_9" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_9" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_9" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_9" type="radio" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="INDICADORES">Miedos intensos ante cosas</td>
+                                    <td data-label="FRECUENTE/M"><input name="indicador_10" type="radio" /></td>
+                                    <td data-label="MUY FRECUENTE/M"><input name="indicador_10" type="radio" /></td>
+                                    <td data-label="NUNCA"><input name="indicador_10" type="radio" /></td>
+                                    <td data-label="ANTES"><input name="indicador_10" type="radio" /></td>
+                                    <td data-label="A VECES"><input name="indicador_10" type="radio" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3>Observaciones de Higiene.</h3><label for="observaciones_higiene">Describa
+                        brevemente:</label><textarea name="observaciones_higiene" rows="4"
+                        style="width:100%"></textarea>
+                </div>
+                <div class="subtab-content" id="caracteristicas_personales" style="display: none">
+                    <h3>CARACTERÍSTICAS PERSONALES.</h3>
+                    <h3>ÁREA SOCIAL</h3>
+                    <label>¿Cómo es tu relación con los compañeros?</label>
+                    <div class="button-style">
+                        <input checked="" id="companeros_buena" name="relacion_companeros" type="radio" value="Buena" />
+                        <label for="companeros_buena">Buena</label>
+                        <input id="companeros_regular" name="relacion_companeros" type="radio" value="Regular" />
+                        <label for="companeros_regular">Regular</label>
+                        <input id="companeros_mala" name="relacion_companeros" type="radio" value="Mala" />
+                        <label for="companeros_mala">Mala</label>
+                    </div>
+                    <label>¿Por qué?</label>
+                    <input name="porque_relacion_companeros" type="text" />
+                    <label>¿Cómo es tu relación con tus amigos?</label>
+                    <input name="relacion_amigos" type="text" />
+                    <label>¿Tienes Pareja?</label>
+                    <div class="button-style">
+                        <input checked="" id="tiene_pareja_si" name="tiene_pareja" type="radio" value="Sí" />
+                        <label for="tiene_pareja_si">Sí</label>
+                        <input id="tiene_pareja_no" name="tiene_pareja" type="radio" value="No" />
+                        <label for="tiene_pareja_no">No</label>
+                    </div>
+                    <label>¿Cómo es tu relación con tu pareja?</label>
+                    <input name="relacion_pareja" type="text" />
+                    <label>¿Cómo es tu relación con tus profesores?</label>
+                    <input name="relacion_profesores" type="text" />
+                    <label>¿Cómo es tu relación con las autoridades académicas?</label>
+                    <input name="relacion_autoridades" type="text" />
+                    <label>¿Qué haces en tu tiempo libre?</label>
+                    <input name="tiempo_libre" type="text" />
+                    <label>¿Cuál es tu actividad recreativa?</label>
+                    <input name="actividad_recreativa" type="text" />
+                    <h3>CARACTERÍSTICAS PERSONALES (MADUREZ Y EQUILIBRIO)</h3>
+                    <div style="overflow-x:auto;">
+                        <table border="1" style="width:100%; border-collapse: collapse;">
+                            <thead>
+                                <tr>
+                                    <th>AUTOPERCEPCIÓN</th>
+                                    <th>NO</th>
+                                    <th>POCO</th>
+                                    <th>FRECUENTE/M.</th>
+                                    <th>MUCHO</th>
+                                    <th>OBSERVACIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Puntual</td>
+                                    <td data-label="NO"><input name="caract_0" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_0" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_0" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_0" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_0" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Tímido/a</td>
+                                    <td data-label="NO"><input name="caract_1" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_1" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_1" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_1" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_1" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Alegre</td>
+                                    <td data-label="NO"><input name="caract_2" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_2" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_2" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_2" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_2" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Agresivo/a</td>
+                                    <td data-label="NO"><input name="caract_3" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_3" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_3" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_3" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_3" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Abierto/a a las ideas de otros</td>
+                                    <td data-label="NO"><input name="caract_4" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_4" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_4" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_4" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_4" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Reflexivo/a</td>
+                                    <td data-label="NO"><input name="caract_5" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_5" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_5" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_5" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_5" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Constante</td>
+                                    <td data-label="NO"><input name="caract_6" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_6" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_6" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_6" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_6" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Optimista</td>
+                                    <td data-label="NO"><input name="caract_7" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_7" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_7" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_7" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_7" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Impulsivo/a</td>
+                                    <td data-label="NO"><input name="caract_8" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_8" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_8" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_8" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_8" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Silencioso/a</td>
+                                    <td data-label="NO"><input name="caract_9" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_9" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_9" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_9" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_9" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Generoso/a</td>
+                                    <td data-label="NO"><input name="caract_10" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_10" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_10" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_10" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_10" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Inquieto/a</td>
+                                    <td data-label="NO"><input name="caract_11" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_11" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_11" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_11" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_11" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Cambios de humor</td>
+                                    <td data-label="NO"><input name="caract_12" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_12" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_12" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_12" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_12" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Dominante</td>
+                                    <td data-label="NO"><input name="caract_13" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_13" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_13" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_13" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_13" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Egoísta</td>
+                                    <td data-label="NO"><input name="caract_14" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_14" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_14" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_14" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_14" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Sumiso/a</td>
+                                    <td data-label="NO"><input name="caract_15" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_15" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_15" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_15" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_15" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Confiado/a en sí mismo/a</td>
+                                    <td data-label="NO"><input name="caract_16" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_16" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_16" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_16" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_16" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Imaginativo/a</td>
+                                    <td data-label="NO"><input name="caract_17" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_17" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_17" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_17" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_17" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Con iniciativa propia</td>
+                                    <td data-label="NO"><input name="caract_18" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_18" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_18" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_18" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_18" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Sociable</td>
+                                    <td data-label="NO"><input name="caract_19" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_19" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_19" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_19" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_19" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Responsable</td>
+                                    <td data-label="NO"><input name="caract_20" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_20" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_20" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_20" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_20" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Perseverante</td>
+                                    <td data-label="NO"><input name="caract_21" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_21" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_21" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_21" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_21" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Motivado/a</td>
+                                    <td data-label="NO"><input name="caract_22" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_22" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_22" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_22" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_22" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Activo/a</td>
+                                    <td data-label="NO"><input name="caract_23" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_23" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_23" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_23" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_23" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="AUTOPERCEPCIÓN">Independiente</td>
+                                    <td data-label="NO"><input name="caract_24" type="radio" value="NO" /></td>
+                                    <td data-label="POCO"><input name="caract_24" type="radio" value="POCO" /></td>
+                                    <td data-label="FRECUENTE/M."><input name="caract_24" type="radio"
+                                            value="FRECUENTE" /></td>
+                                    <td data-label="MUCHO"><input name="caract_24" type="radio" value="MUCHO" /></td>
+                                    <td data-label="OBSERVACIONES"><input name="caract_obs_24" style="width:100%"
+                                            type="text" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3>ÁREA PSICOPEDAGÓGICA</h3>
+                    <label>¿Cómo te gustaría ser?</label>
+                    <input name="como_te_gustaria_ser" type="text" />
+                    <label>¿Recibes ayuda en tu casa para la realización de tareas escolares?</label>
+                    <input name="ayuda_en_tareas" type="text" />
+                    <label>¿Qué problemas personales intervienen en tus estudios?</label>
+                    <input name="problemas_estudios" type="text" />
+                    <label>¿Cuál es tu rendimiento escolar?</label>
+                    <input name="rendimiento_escolar" type="text" />
+                    <label>Menciona las asignaturas que cursas en el semestre actual</label>
+                    <input name="asignaturas_actuales" type="text" />
+                    <label>¿Cuál es tu asignatura preferida? ¿Por qué?</label>
+                    <input name="asignatura_preferida" type="text" />
+                    <label>¿Cuál es la asignatura en la que sobresales? ¿Por qué?</label>
+                    <input name="asignatura_sobresale" type="text" />
+                    <label>¿Qué asignatura te desagrada? ¿Por qué?</label>
+                    <input name="asignatura_desagrada" type="text" />
+                    <label>¿Cuál es tu asignatura con más bajo promedio del semestre anterior? ¿Por qué?</label>
+                    <input name="asignatura_bajo_promedio" type="text" />
+                    <label>¿Por qué vienes al Tecnológico?</label>
+                    <input name="por_que_vienes" type="text" />
+                    <label>¿Qué te motiva para venir al Tecnológico?</label>
+                    <input name="motivacion_tecnologico" type="text" />
+                    <label>¿Cuál es tu promedio general del ciclo escolar anterior?</label>
+                    <input name="promedio_anterior" type="text" />
+                    <label>¿Tienes asignaturas reprobadas?</label>
+                    <div class="button-style">
+                        <input checked="" id="reprobadas_si" name="asignaturas_reprobadas" type="radio" value="Si" />
+                        <label for="reprobadas_si">Si</label>
+                        <input id="reprobadas_no" name="asignaturas_reprobadas" type="radio" value="No" />
+                        <label for="reprobadas_no">No</label>
+                    </div>
+                    <label>¿Cuáles?</label>
+                    <input name="cuales_reprobadas" type="text" />
+                    <h3>PLAN DE VIDA Y CARRERA</h3>
+                    <label>¿Cuáles son tus planes inmediatos?</label>
+                    <input name="planes_inmediatos" type="text" />
+                    <label>¿Cuáles son tus metas en la vida?</label>
+                    <input name="metas_vida" type="text" />
+                    <label>Nombre del entrevistador</label>
+                    <input name="nombre_entrevistador" type="text" />
+                    <h3>CARACTERÍSTICAS PERSONALES</h3>
+                    <label>Yo Soy…</label>
+                    <input name="yo_soy" type="text" />
+                    <label>Mi Carácter es…</label>
+                    <input name="mi_caracter" type="text" />
+                    <label>A mí me gusta que…</label>
+                    <input name="me_gusta" type="text" />
+                    <label>Yo Aspiro en la Vida…</label>
+                    <input name="yo_aspiro" type="text" />
+                    <label>Yo tengo miedo que…</label>
+                    <input name="yo_tengo_miedo" type="text" />
+                    <label>Pero pienso que podré lograr…</label>
+                    <input name="yo_podre_lograr" type="text" />
+                </div>
+                <!-- ******************************************************************* -->
+                <button style="
+              margin-top: 20px;
+              background-color: #4caf50;
+              color: white;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer; font-size: 1rem;
+            " type="submit">
+                    Guardar en base de datos
+                </button>
+            </form>
+        </div>
+        <div class="formulario" id="form2">
+            <h3>Formulario 2 – Test de Autoestima</h3>
+            <p style="font-weight:bold;">INSTRUCCIONES:
+                Realiza el siguiente test para evaluar y comprobar tu nivel de autoestima. Contesta con la mayor
+                sinceridad posible a cada una de las siguientes preguntas eligiendo la respuesta que más se identifique
+                con tu forma de pensar o de actuar:</p>
+            <div style="overflow-x:auto;">
+                <table border="1" style="width:100%; border-collapse: collapse;">
+                    <tr>
+                        <td rowspan="5" style="width:40px; text-align:center;">1</td>
+                        <td colspan="2" style="background:#d9d9d9;">A la hora de tomar decisiones en tu vida, como
+                            proponer cosas
+                            nuevas en el trabajo, iniciar alguna actividad de ocio, o elegir un color nuevo para pintar
+                            tu casa, ¿sueles buscar la aprobación o el apoyo de las personas que te rodean?</td>
+                    </tr>
+                    <tr>
+                        <td>No, consideras que tu opinión sea buena y que la de los demás no tenga por qué serlo
+                            siempre.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input checked="" id="q1_A" name="p1" type="radio" value="A" />
+                                <label for="q1_A">A</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sí, pero sólo ante las decisiones que consideras demasiado importantes como para actuar
+                            precipitadamente.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q1_B" name="p1" type="radio" value="B" />
+                                <label for="q1_B">B</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sí, siempre que puedes consultas con los demás. Te equivocas con frecuencia y quieres hacer
+                            las cosas bien.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q1_C" name="p1" type="radio" value="C" />
+                                <label for="q1_C">C</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Depende de la decisión. Sueles tener claro lo que vas a hacer, pero consideras las
+                            posibilidades que te ofrecen los demás.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q1_D" name="p1" type="radio" value="D" />
+                                <label for="q1_D">D</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" style="width:40px; text-align:center;">2</td>
+                        <td colspan="2" style="background:#d9d9d9;">Imagina que estás en una reunión social o familiar
+                            importante; adviertes que 110 vas vestido para la ocasión y que desentonas con los demás,
+                            ¿cómo te comportas?</td>
+                    </tr>
+                    <tr>
+                        <td>No le das importancia, te comportas con naturalidad y si alguien te lo comenta haces alguna
+                            broma al respecto.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input checked="" id="q2_A" name="p2" type="radio" value="A" />
+                                <label for="q2_A">A</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Te da mucha vergüenza. Procuras situarte en algún lugar discreto y pasar desapercibido.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q2_B" name="p2" type="radio" value="B" />
+                                <label for="q2_B">B</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Te sientes incómodo pero tratas de no pensar en ello, te integras en la reunión y das alguna
+                            excusa por tu error.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q2_C" name="p2" type="radio" value="C" />
+                                <label for="q2_C">C</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>No te importa nada en absoluto, aunque no lleves la ropa adecuada tienes estilo y sabes
+                            llevar bien cualquier cosa.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q2_D" name="p2" type="radio" value="D" />
+                                <label for="q2_D">D</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" style="width:40px; text-align:center;">3</td>
+                        <td colspan="2" style="background:#d9d9d9;">Tienes muchas ganas de irte a comprar ropa y le
+                            pides a algún amigo que te acompañe. Esta persona es más alta y más atractiva que tú, y todo
+                            lo que se prueba le queda mucho mejor que a ti.</td>
+                    </tr>
+                    <tr>
+                        <td>Admiras el estilo de tu acompañante, al final compras un par de prendas necesarias pero muy
+                            simples en cuanto a forma y color.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input checked="" id="q3_A" name="p3" type="radio" value="A" />
+                                <label for="q3_A">A</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>No estás dispuesto a que te gane, decides comprar varias prendas muy modernas y bastante
+                            caras.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q3_B" name="p3" type="radio" value="B" />
+                                <label for="q3_B">B</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Admiras su estilo pero eres muy consciente del tuyo, compras la ropa que mejor te sienta y
+                            que necesitas, y pasáis un rato ameno probándoos cosas diferentes.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q3_C" name="p3" type="radio" value="C" />
+                                <label for="q3_C">C</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>A su lado te sientes bastante poca cosa, te quita las ganas de probarte nada y mucho menos
+                            de comprar. Pones una excusa y te marchas.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q3_D" name="p3" type="radio" value="D" />
+                                <label for="q3_D">D</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" style="width:40px; text-align:center;">4</td>
+                        <td colspan="2" style="background:#d9d9d9;">Un día conoces a alguien nuevo y muy interesante,
+                            estáis charlando animadamente y llega el momento de hablar de ti, ¿cuál de las siguientes
+                            opciones mejor se ajusta a lo que cuentas?</td>
+                    </tr>
+                    <tr>
+                        <td>No crees que tengas mucho que contar, tu trabajo es muy corriente, tus amigos son normales y
+                            tus aficiones también. Prefieres que esta persona te cuente su vida.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input checked="" id="q4_A" name="p4" type="radio" value="A" />
+                                <label for="q4_A">A</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tu trabajo te gusta y aunque sea corriente, siempre lo enfocas desde una perspectiva
+                            interesante, tus aficiones son tu pasión y disfrutas hablando de ellas, también hablas de
+                            tus proyectos futuros.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q4_B" name="p4" type="radio" value="B" />
+                                <label for="q4_B">B</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Hablas en líneas generales de tu trabajo y de tus aficiones, sobre todo hablas de tus amigos
+                            y de lo más interesante de sus vidas.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q4_C" name="p4" type="radio" value="C" />
+                                <label for="q4_C">C</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Más que de tu trabajo actual, hablas de tus proyectos y de tus objetivos, y de lo que vas a
+                            hacer para logrados, de lo buenas que son tus amistades y lo poco usual de tus aficiones. Te
+                            gusta hablar de ti.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q4_D" name="p4" type="radio" value="D" />
+                                <label for="q4_D">D</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" style="width:40px; text-align:center;">5</td>
+                        <td colspan="2" style="background:#d9d9d9;">En tu lugar de trabajo o de estudios, se está
+                            explicando algo que es completamente nuevo para ti. Llega un momento en que te das cuenta
+                            que no has entendido casi nada ¿Qué haces?</td>
+                    </tr>
+                    <tr>
+                        <td>Paras la explicación y requieres que se empiece de nuevo, si tu no lo entiendes habrá mucha
+                            gente que tampoco lo haga.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input checked="" id="q5_A" name="p5" type="radio" value="A" />
+                                <label for="q5_A">A</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Si hay más gente que pregunte tu también lo haces, si no, buscas en un aparte al ponente
+                            para que te aclare las dudas.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q5_B" name="p5" type="radio" value="B" />
+                                <label for="q5_B">B</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Te da mucha vergüenza preguntar y demostrar así que no entiendes. Más tarde preguntarás a
+                            algún amigo o intentarás informarte por tu cuenta.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q5_C" name="p5" type="radio" value="C" />
+                                <label for="q5_C">C</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tomas nota de lo que no entiendes para preguntarlo al finalizar la charla, si sigues con
+                            dudas pedirás información complementaria para prepararte mejor.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q5_D" name="p5" type="radio" value="D" />
+                                <label for="q5_D">D</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" style="width:40px; text-align:center;">6</td>
+                        <td colspan="2" style="background:#d9d9d9;">Tener un trabajo bien remunerado y que nos guste es
+                            algo difícil de conseguir, si tuvieras que valorar tu empleo o tu situación laboral, ¿cómo
+                            la definirías?</td>
+                    </tr>
+                    <tr>
+                        <td>Satisfactoria, tratas de buscar el lado positivo de las cosas y nunca te faltan proyectos y
+                            objetivos que perseguir.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input checked="" id="q6_A" name="p6" type="radio" value="A" />
+                                <label for="q6_A">A</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Horrible, no obstante, sabes que las cosas están mal y que tienes que aguantar lo que sea.
+                            Estás muy agradecido por tener trabajo.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q6_B" name="p6" type="radio" value="B" />
+                                <label for="q6_B">B</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>No te preocupa especialmente el tema, tienes un montón de proyectos más importantes y con tu
+                            valía los alcanzarás.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q6_C" name="p6" type="radio" value="C" />
+                                <label for="q6_C">C</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Has logrado que no te afecte, consideras más importante tu vida personal y privada y eso es
+                            por lo que luchas.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q6_D" name="p6" type="radio" value="D" />
+                                <label for="q6_D">D</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" style="width:40px; text-align:center;">7</td>
+                        <td colspan="2" style="background:#d9d9d9;">Has tenido un día duro, has trabajado con más ahínco
+                            para finalizar una tarea en la oficina, has hecho todas las gestiones que tenías pendientes,
+                            has resuelto un par de problemas domésticos y encima le has hecho un favor a un amigo. ¿Qué
+                            haces al llegar a casa?</td>
+                    </tr>
+                    <tr>
+                        <td>Prefieres no pensarlo, el día ha sido duro pero para ti no es algo nuevo, solo pides poder
+                            dormir bien y que mañana sea un día más tranquilo.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input checked="" id="q7_A" name="p7" type="radio" value="A" />
+                                <label for="q7_A">A</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Se lo cuentas a todo el mundo, te gusta que se te reconozca cuando haces las cosas bien y
+                            exiges en casa que te mimen por haberte esforzado tanto.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q7_B" name="p7" type="radio" value="B" />
+                                <label for="q7_B">B</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Estás muy satisfecho y decides darte un capricho, darte un baño de espuma y ver una buena
+                            película, o comprarte un regalito que hace tiempo querías.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q7_C" name="p7" type="radio" value="C" />
+                                <label for="q7_C">C</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Te preocupa que se te haya olvidado algo o haber hecho algo mal por la prisa, repasas
+                            mentalmente las actividades y al día siguiente esperas no tener queja de nadie.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q7_D" name="p7" type="radio" value="D" />
+                                <label for="q7_D">D</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" style="width:40px; text-align:center;">8</td>
+                        <td colspan="2" style="background:#d9d9d9;">En tu trabajo están buscando a una persona que
+                            represente a la empresa en un concurso del ramo. Piden una persona que cumpla unos
+                            requisitos, entre ellos, explicar bien vuestro trabajo y que haga una demostración práctica
+                            del mismo.</td>
+                    </tr>
+                    <tr>
+                        <td>No te planteas ser voluntario, hay mil personas más capacitadas que tú para la demostración
+                            y no se te da bien hablar en público.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input checked="" id="q8_A" name="p8" type="radio" value="A" />
+                                <label for="q8_A">A</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Te presentas voluntario, puede ser una experiencia interesante y si sales elegido puedes
+                            hacer una presentación innovadora.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q8_B" name="p8" type="radio" value="B" />
+                                <label for="q8_B">B</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>No te presentas, serías capaz de hacerla bien pero crees que hay gente mejor preparada y más
+                            original que tú.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q8_C" name="p8" type="radio" value="C" />
+                                <label for="q8_C">C</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Te presentas y estás casi seguro de que te elegirán, haces buenos proyectos y darás una
+                            buena imagen de la empresa.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q8_D" name="p8" type="radio" value="D" />
+                                <label for="q8_D">D</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" style="width:40px; text-align:center;">9</td>
+                        <td colspan="2" style="background:#d9d9d9;">¿Con cuál de las siguientes frases sobre la buena
+                            fortuna estás más de acuerdo?</td>
+                    </tr>
+                    <tr>
+                        <td>La buena suerte puede tocarle a todo el mundo, yo me considero una persona afortunada a la
+                            que la vida le sonríe.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input checked="" id="q9_A" name="p9" type="radio" value="A" />
+                                <label for="q9_A">A</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Para tener buena suerte hay que trabajar duro, sólo los muy afortunados la tienen sin apenas
+                            esfuerzo.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q9_B" name="p9" type="radio" value="B" />
+                                <label for="q9_B">B</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Yo no tengo suerte, tanto los premios como las cosas especia les sólo les pasan a los demás.
+                        </td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q9_C" name="p9" type="radio" value="C" />
+                                <label for="q9_C">C</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>La suerte respecto a los premios es una cuestión de probabilidad, y respecto a las cosas de
+                            la vida, siempre depende de cómo se perciban.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q9_D" name="p9" type="radio" value="D" />
+                                <label for="q9_D">D</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" style="width:40px; text-align:center;">10</td>
+                        <td colspan="2" style="background:#d9d9d9;">En una fiesta en La que no conoces a nadie excepto a
+                            Los anfitriones, te presentan a un grupo de personas de aspecto interesante. ¿Cuál es tu
+                            actitud?</td>
+                    </tr>
+                    <tr>
+                        <td>Te interesa conocerlos no sólo para pasar un buen rato en la reunión sino porque puede ser
+                            una forma de iniciar una amistad.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input checked="" id="q10_A" name="p10" type="radio" value="A" />
+                                <label for="q10_A">A</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Esperas causarles una buena impresión y decir cosas que les puedan interesar.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q10_B" name="p10" type="radio" value="B" />
+                                <label for="q10_B">B</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Te gustaría llevarles a tu terreno en la conversación para así poder hablar de los temas que
+                            más te interesan.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q10_C" name="p10" type="radio" value="C" />
+                                <label for="q10_C">C</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Antes de iniciar una conversación escuchas lo que dicen, y es peras para hablar a que lo
+                            hagan de temas que tú conozcas.</td>
+                        <td style="width:60px; text-align:center;">
+                            <div class="button-style">
+                                <input id="q10_D" name="p10" type="radio" value="D" />
+                                <label for="q10_D">D</label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="mobile-qblock">
+
+                <p>1. A la hora de tomar decisiones en tu vida, como proponer cosas
+                    nuevas en el trabajo, iniciar alguna actividad de ocio, o elegir un color nuevo para pintar
+                    tu casa, ¿sueles buscar la aprobación o el apoyo de las personas que te rodean?</p>
+                <!-- <input id="p1_A" name="p1" type="radio" value="A" /> -->
+                <label for="p1_A">A) No, consideras que tu opinión sea buena y
+                    que la de los demás no tenga por qué serlo
+                    siempre.</label>
+                <div class="button-style">
+                    <input id="p1_A" name="p1" type="radio" value="A" />
+                    <label for="p1_A">A</label>
+                </div>
+                <input id="p1_B" name="p1" type="radio" value="B" />
+                <label for="p1_B">B) Sí, pero
+                    sólo ante las decisiones que consideras demasiado importantes como para actuar
+                    precipitadamente.</label>
+                <input id="p1_C" name="p1" type="radio" value="C" />
+                <label for="p1_C">C)
+                    Sí, siempre que puedes consultas con los demás. Te equivocas con frecuencia y quieres hacer
+                    las cosas bien.</label>
+                <input id="p1_D" name="p1" type="radio" value="D" />
+                <label for="p1_D">D)
+                    Depende de la decisión. Sueles tener claro lo que vas a hacer, pero consideras las
+                    posibilidades que te ofrecen los demás.</label>
+            </div>
+            <div class="mobile-qblock">
+                <p>2. Imagina que estás en una reunión social o familiar
+                    importante; adviertes que 110 vas vestido para la ocasión y que desentonas con los demás,
+                    ¿cómo te comportas?</p><input id="p2_A" name="p2" type="radio" value="A" /><label for="p2_A">A) No
+                    le das importancia, te comportas con naturalidad y si alguien te lo comenta haces alguna
+                    broma al respecto.</label><input id="p2_B" name="p2" type="radio" value="B" /><label for="p2_B">B)
+                    Te da mucha vergüenza. Procuras situarte en algún lugar discreto y pasar
+                    desapercibido.</label><input id="p2_C" name="p2" type="radio" value="C" /><label for="p2_C">C) Te
+                    sientes incómodo pero tratas de no pensar en ello, te integras en la reunión y das alguna
+                    excusa por tu error.</label><input id="p2_D" name="p2" type="radio" value="D" /><label for="p2_D">D)
+                    No te importa nada en absoluto, aunque no lleves la ropa adecuada tienes estilo y sabes
+                    llevar bien cualquier cosa.</label>
+            </div>
+            <div class="mobile-qblock">
+                <p>3. Tienes muchas ganas de irte a comprar ropa y le
+                    pides a algún amigo que te acompañe. Esta persona es más alta y más atractiva que tú, y todo
+                    lo que se prueba le queda mucho mejor que a ti.</p><input id="p3_A" name="p3" type="radio"
+                    value="A" /><label for="p3_A">A) Admiras el estilo de tu acompañante, al final compras un par de
+                    prendas necesarias pero muy
+                    simples en cuanto a forma y color.</label><input id="p3_B" name="p3" type="radio" value="B" /><label
+                    for="p3_B">B) No estás dispuesto a que te gane, decides comprar varias prendas muy modernas y
+                    bastante
+                    caras.</label><input id="p3_C" name="p3" type="radio" value="C" /><label for="p3_C">C) Admiras su
+                    estilo pero eres muy consciente del tuyo, compras la ropa que mejor te sienta y
+                    que necesitas, y pasáis un rato ameno probándoos cosas diferentes.</label><input id="p3_D" name="p3"
+                    type="radio" value="D" /><label for="p3_D">D) A su lado te sientes bastante poca cosa, te quita las
+                    ganas de probarte nada y mucho menos
+                    de comprar. Pones una excusa y te marchas.</label>
+            </div>
+            <div class="mobile-qblock">
+                <p>4. Un día conoces a alguien nuevo y muy interesante,
+                    estáis charlando animadamente y llega el momento de hablar de ti, ¿cuál de las siguientes
+                    opciones mejor se ajusta a lo que cuentas?</p><input id="p4_A" name="p4" type="radio"
+                    value="A" /><label for="p4_A">A) No crees que tengas mucho que contar, tu trabajo es muy corriente,
+                    tus amigos son normales y
+                    tus aficiones también. Prefieres que esta persona te cuente su vida.</label><input id="p4_B"
+                    name="p4" type="radio" value="B" /><label for="p4_B">B) Tu trabajo te gusta y aunque sea corriente,
+                    siempre lo enfocas desde una perspectiva
+                    interesante, tus aficiones son tu pasión y disfrutas hablando de ellas, también hablas de
+                    tus proyectos futuros.</label><input id="p4_C" name="p4" type="radio" value="C" /><label
+                    for="p4_C">C) Hablas en líneas generales de tu trabajo y de tus aficiones, sobre todo hablas de tus
+                    amigos
+                    y de lo más interesante de sus vidas.</label><input id="p4_D" name="p4" type="radio"
+                    value="D" /><label for="p4_D">D) Más que de tu trabajo actual, hablas de tus proyectos y de tus
+                    objetivos, y de lo que vas a
+                    hacer para logrados, de lo buenas que son tus amistades y lo poco usual de tus aficiones. Te
+                    gusta hablar de ti.</label>
+            </div>
+            <div class="mobile-qblock">
+                <p>5. En tu lugar de trabajo o de estudios, se está
+                    explicando algo que es completamente nuevo para ti. Llega un momento en que te das cuenta
+                    que no has entendido casi nada ¿Qué haces?</p><input id="p5_A" name="p5" type="radio"
+                    value="A" /><label for="p5_A">A) Paras la explicación y requieres que se empiece de nuevo, si tu no
+                    lo entiendes habrá mucha
+                    gente que tampoco lo haga.</label><input id="p5_B" name="p5" type="radio" value="B" /><label
+                    for="p5_B">B) Si hay más gente que pregunte tu también lo haces, si no, buscas en un aparte al
+                    ponente
+                    para que te aclare las dudas.</label><input id="p5_C" name="p5" type="radio" value="C" /><label
+                    for="p5_C">C) Te da mucha vergüenza preguntar y demostrar así que no entiendes. Más tarde
+                    preguntarás a
+                    algún amigo o intentarás informarte por tu cuenta.</label><input id="p5_D" name="p5" type="radio"
+                    value="D" /><label for="p5_D">D) Tomas nota de lo que no entiendes para preguntarlo al finalizar la
+                    charla, si sigues con
+                    dudas pedirás información complementaria para prepararte mejor.</label>
+            </div>
+            <div class="mobile-qblock">
+                <p>6. Tener un trabajo bien remunerado y que nos guste es
+                    algo difícil de conseguir, si tuvieras que valorar tu empleo o tu situación laboral, ¿cómo
+                    la definirías?</p><input id="p6_A" name="p6" type="radio" value="A" /><label for="p6_A">A)
+                    Satisfactoria, tratas de buscar el lado positivo de las cosas y nunca te faltan proyectos y
+                    objetivos que perseguir.</label><input id="p6_B" name="p6" type="radio" value="B" /><label
+                    for="p6_B">B) Horrible, no obstante, sabes que las cosas están mal y que tienes que aguantar lo que
+                    sea.
+                    Estás muy agradecido por tener trabajo.</label><input id="p6_C" name="p6" type="radio"
+                    value="C" /><label for="p6_C">C) No te preocupa especialmente el tema, tienes un montón de proyectos
+                    más importantes y con tu
+                    valía los alcanzarás.</label><input id="p6_D" name="p6" type="radio" value="D" /><label
+                    for="p6_D">D) Has logrado que no te afecte, consideras más importante tu vida personal y privada y
+                    eso es
+                    por lo que luchas.</label>
+            </div>
+            <div class="mobile-qblock">
+                <p>7. Has tenido un día duro, has trabajado con más ahínco
+                    para finalizar una tarea en la oficina, has hecho todas las gestiones que tenías pendientes,
+                    has resuelto un par de problemas domésticos y encima le has hecho un favor a un amigo. ¿Qué
+                    haces al llegar a casa?</p><input id="p7_A" name="p7" type="radio" value="A" /><label for="p7_A">A)
+                    Prefieres no pensarlo, el día ha sido duro pero para ti no es algo nuevo, solo pides poder
+                    dormir bien y que mañana sea un día más tranquilo.</label><input id="p7_B" name="p7" type="radio"
+                    value="B" /><label for="p7_B">B) Se lo cuentas a todo el mundo, te gusta que se te reconozca cuando
+                    haces las cosas bien y
+                    exiges en casa que te mimen por haberte esforzado tanto.</label><input id="p7_C" name="p7"
+                    type="radio" value="C" /><label for="p7_C">C) Estás muy satisfecho y decides darte un capricho,
+                    darte un baño de espuma y ver una buena
+                    película, o comprarte un regalito que hace tiempo querías.</label><input id="p7_D" name="p7"
+                    type="radio" value="D" /><label for="p7_D">D) Te preocupa que se te haya olvidado algo o haber hecho
+                    algo mal por la prisa, repasas
+                    mentalmente las actividades y al día siguiente esperas no tener queja de nadie.</label>
+            </div>
+            <div class="mobile-qblock">
+                <p>8. En tu trabajo están buscando a una persona que
+                    represente a la empresa en un concurso del ramo. Piden una persona que cumpla unos
+                    requisitos, entre ellos, explicar bien vuestro trabajo y que haga una demostración práctica
+                    del mismo.</p><input id="p8_A" name="p8" type="radio" value="A" /><label for="p8_A">A) No te
+                    planteas ser voluntario, hay mil personas más capacitadas que tú para la demostración
+                    y no se te da bien hablar en público.</label><input id="p8_B" name="p8" type="radio"
+                    value="B" /><label for="p8_B">B) Te presentas voluntario, puede ser una experiencia interesante y si
+                    sales elegido puedes
+                    hacer una presentación innovadora.</label><input id="p8_C" name="p8" type="radio" value="C" /><label
+                    for="p8_C">C) No te presentas, serías capaz de hacerla bien pero crees que hay gente mejor preparada
+                    y más
+                    original que tú.</label><input id="p8_D" name="p8" type="radio" value="D" /><label for="p8_D">D) Te
+                    presentas y estás casi seguro de que te elegirán, haces buenos proyectos y darás una
+                    buena imagen de la empresa.</label>
+            </div>
+            <div class="mobile-qblock">
+                <p>9. ¿Con cuál de las siguientes frases sobre la buena
+                    fortuna estás más de acuerdo?</p><input id="p9_A" name="p9" type="radio" value="A" /><label
+                    for="p9_A">A) La buena suerte puede tocarle a todo el mundo, yo me considero una persona afortunada
+                    a la
+                    que la vida le sonríe.</label><input id="p9_B" name="p9" type="radio" value="B" /><label
+                    for="p9_B">B) Para tener buena suerte hay que trabajar duro, sólo los muy afortunados la tienen sin
+                    apenas
+                    esfuerzo.</label><input id="p9_C" name="p9" type="radio" value="C" /><label for="p9_C">C) Yo no
+                    tengo suerte, tanto los premios como las cosas especia les sólo les pasan a los demás.</label><input
+                    id="p9_D" name="p9" type="radio" value="D" /><label for="p9_D">D) La suerte respecto a los premios
+                    es una cuestión de probabilidad, y respecto a las cosas de
+                    la vida, siempre depende de cómo se perciban.</label>
+            </div>
+            <div class="mobile-qblock">
+                <p>10. En una fiesta en La que no conoces a nadie excepto a
+                    Los anfitriones, te presentan a un grupo de personas de aspecto interesante. ¿Cuál es tu
+                    actitud?</p><input id="p10_A" name="p10" type="radio" value="A" /><label for="p10_A">A) Te interesa
+                    conocerlos no sólo para pasar un buen rato en la reunión sino porque puede ser
+                    una forma de iniciar una amistad.</label><input id="p10_B" name="p10" type="radio"
+                    value="B" /><label for="p10_B">B) Esperas causarles una buena impresión y decir cosas que les puedan
+                    interesar.</label><input id="p10_C" name="p10" type="radio" value="C" /><label for="p10_C">C) Te
+                    gustaría llevarles a tu terreno en la conversación para así poder hablar de los temas que
+                    más te interesan.</label><input id="p10_D" name="p10" type="radio" value="D" /><label for="p10_D">D)
+                    Antes de iniciar una conversación escuchas lo que dicen, y es peras para hablar a que lo
+                    hagan de temas que tú conozcas.</label>
+            </div>
+        </div>
+        <!-- <div class="formulario" id="form3">
+            <h3>Formulario 3 (Próximamente)</h3>
+        </div> -->
+    </div>
+    <a class="back-button" href="index.html">Volver al inicio</a>
+    <script>
+        function mostrarFormulario(id) {
+            document
+                .querySelectorAll(".formulario")
+                .forEach((el) => (el.style.display = "none"));
+            document.getElementById(id).style.display = "block";
+        }
+
+        function mostrarSubtab(id, el) {
+            document.querySelectorAll('.subtab-content').forEach(div => div.style.display = "none");
+            document.querySelectorAll('.subtablink').forEach(btn => btn.classList.remove("active"));
+            document.getElementById(id).style.display = "block";
+            el.classList.add("active");
+        }
+
+        window.onload = function () {
+            mostrarFormulario('form1');
+            const firstSubtab = document.querySelector('.subtablink');
+            if (firstSubtab) {
+                mostrarSubtab('datos_personales', firstSubtab);
+            }
+        };
+    </script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const otrosRadio = document.querySelector("input[type='radio'][value='Otros']");
+            const especifiqueInput = document.querySelector("input[name='especifique']");
+
+            if (otrosRadio && especifiqueInput) {
+                otrosRadio.addEventListener("change", function () {
+                    if (otrosRadio.checked) {
+                        especifiqueInput.value = "";
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
